@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
@@ -5,18 +6,20 @@
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
 
+
+
+
               
-                     <!-- https://raw.githubusercontent.com/Arssent/arssent.github.io/master/N_AR.mp4 --->
-                     
-                    <a-marker preset='hiro'>
-                       <a-video src="https://arssent.github.io/N_AR.mp4" position="0 0.0 3.5"  rotation="-90 0 0" width="5" height="5.43"></a-video>
+        <a-marker type='pattern' url='https://raw.githubusercontent.com/Arssent/arssent.github.io/master/testhiro.patt'>
+                       <a-video src="http://ar-rafinaddemo.000webhostapp.com/N_AR.mp4" position="0 0.0 3.5"  rotation="-90 0 0" width="5" height="5.43"></a-video>
                     </a-marker>
-                    <a-entity camera></a-entity>
-                 
-                 <!--- <a-video src="sh_AR.mp4" position="0 0.0 3.5" rotation="-90 0 0" width="5" height="5.43"></a-video>
-                 <a-marker-camera type="pattern" patternUrl='pattern-marker.patt'></a-marker-camera>--->
+                    
+        <a-marker type='pattern' url='https://raw.githubusercontent.com/Arssent/arssent.github.io/master/pattern-markerhiro2.patt'>
+                       <a-video src="https://ardemo.github.io/liza_mish.mp4" position="0 0.0 3.5"  rotation="-90 0 0" width="5" height="5.43"></a-video>
+                    </a-marker>
+
+         <a-entity camera></a-entity>
                   
 	</a-scene>
 </body>
-
 
