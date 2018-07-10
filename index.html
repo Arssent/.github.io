@@ -11,21 +11,7 @@ var stop=').jpg" class="animation" rotation="-90 0 0" width="1" height="1.4" opa
 var img2=0;
 x=Total-1;
 </script>
-<body onload='var timerId = setTimeout(function tick() {
-  
-  if(x==0){ x=Total-1;
-    for(i=0; i<Total-1; i++){
-    img=i+1;
-    document.getElementsByClassName("animation")[i].outerHTML=start+img+stop;
-    }
-timerId = setTimeout(tick, 2500);
-///alert();
-}else{
-img2=x+1;
-document.getElementsByClassName("animation")[x].outerHTML=start+img2+stop;
-x=x-1;
-  timerId = setTimeout(tick, 40);}
-}, 40);' style='margin : 0px; overflow: hidden;'>
+<body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
 
 
