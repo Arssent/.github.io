@@ -12,7 +12,7 @@ var img=0;
 var img2=0;
 x=Total-1;
  function Go(){
-	 alert();
+alert();
 var timerId = setTimeout(function tick() {
   
   if(x==0){ x=Total-1;
@@ -30,8 +30,13 @@ x=x-1;
 }, 40);
  };  
   </script>	  
- </head>	  
-<body onload="Go();" style='margin : 0px; overflow: hidden;'>
+ </head>
+<script>
+window.addEventListener('load', function(){
+ Go();
+}, false)
+</script>
+<body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
 
 
