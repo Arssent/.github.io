@@ -10,8 +10,9 @@
     <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
    <a-asset-item id="tree-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/alarm.obj"></a-asset-item>
   <a-asset-item id="tree-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/alarm.mtl"></a-asset-item>
-        <a-mixin id="text"
-        position="-0 0.4 -0.5"  obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.01 0.01 0.01" dynamic-body="shape: box"  
+         <a-mixin id="text"
+       geometry="primitive: box; height: 0.5; width: 0.2; depth: 0.2" position="-0 0.4 -0.5"  obj-model="obj: #tree-obj; mtl: #tree-mtl"
+  dynamic-body="shape: box"  height="0.2" width="1"  depth="1"
        material="shader: standard; color:black"
 </a-mixin>
  
@@ -44,13 +45,13 @@ X++;
 var TexT = document.createElement('a-entity');
 TexT.setAttribute('mixin', 'text');
 
-    // TexT.setAttribute('geometry', {
- // primitive: 'box',
- // height: Theight,
- // width: Twidth,
- // depth: Tdepth
+    TexT.setAttribute('geometry', {
+ primitive: 'box',
+ height: Theight,
+ width: Twidth,
+depth: Tdepth
 
-//});
+});
      TexT.setAttribute('dynamic-body', 
    {
    shape: 'box',
