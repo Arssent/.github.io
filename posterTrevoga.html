@@ -28,14 +28,14 @@
  
   </a-scene>
      <script>
-	     var GetStart = setInterval(function() {
+var GetStart = setInterval(function() {
   
 var Target = document.querySelector('#Target');
 var TargetPos = Target.getAttribute('position');
-alert('это цель'+TargetPos.y);
-
- 
-}, 5000);
+if(TargetPos.y>0.144){
+alert(TargetPos.y);
+}
+}, 500);
 	     
 function StartPanic(){
   var Theight=0.5;
