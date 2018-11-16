@@ -28,7 +28,7 @@
  
   </a-scene>
      <script>
-	     var GetStart = setTimeout(function Go() {
+	     var GetStart = setInterval(function() {
   
 var Target = document.querySelector('#Target');
 var TargetPos = Target.getAttribute('position');
@@ -38,11 +38,11 @@ alert(TargetPos.y);
 
 var CamerA = document.querySelector('[camera]');
 var CamerAPos = CamerA.getAttribute('position');
-alert(CamerPos.y);
+alert(CamerAPos.y);
 
 
 
-  GetStart = setTimeout(Go, 2000);
+  
 }, 2000);
 	     
 function StartPanic(){
