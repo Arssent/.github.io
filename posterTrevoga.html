@@ -28,6 +28,23 @@
  
   </a-scene>
      <script>
+	     var GetStart = setTimeout(function Go() {
+  
+var Target = document.querySelector('#Target');
+var TargetPos = Target.getAttribute('position');
+alert(TargetPos.y);
+
+
+
+var CamerA = document.querySelector('[camera]');
+var CamerAPos = CamerA.getAttribute('position');
+alert(CamerPos.y);
+
+
+
+  GetStart = setTimeout(Go, 2000);
+}, 2000);
+	     
 function StartPanic(){
   var Theight=0.5;
   var Twidth=0.1;
