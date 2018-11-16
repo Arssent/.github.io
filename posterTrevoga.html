@@ -35,7 +35,9 @@ var TargetPos = Target.getAttribute('position');
 
 if(TargetPos.y>0.143){
 	if(TargetPos.y<0.144){
-       alert('тест! '+TargetPos.y);
+	StartPanic();
+	clearInterval(GetStart);
+       //alert('тест! '+TargetPos.y);
        }
 	            }
 }, 500);
@@ -83,7 +85,7 @@ Scena.appendChild(TexT);
 }, 100);
 };
 	     
-StartPanic();
+
 	</script>                
 	</a-scene>
 </body>
