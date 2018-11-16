@@ -32,9 +32,12 @@ var GetStart = setInterval(function() {
   
 var Target = document.querySelector('#Target');
 var TargetPos = Target.getAttribute('position');
-if(TargetPos.y<0.144){
-alert('тест'+TargetPos.y);
-}
+
+if(TargetPos.y>0.13){
+	if(TargetPos.y<0.144){
+       alert('тест2'+TargetPos.y);
+       }
+	            }
 }, 500);
 	     
 function StartPanic(){
