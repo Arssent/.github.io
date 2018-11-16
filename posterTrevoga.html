@@ -4,8 +4,21 @@
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.2.0/dist/aframe-physics-system.min.js"></script>
+<script>
+	AFRAME.registerComponent('markerhandler', {
+
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+
+        animatedMarker.addEventListener('click', function(ev){
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
+                StartPanic();
+            }
+        });
+}});
+</script>
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam;'>
+	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
     <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
   <img id="my-texture" src="https://image.ibb.co/cjCo4f/Textback.jpg">
@@ -17,13 +30,14 @@
 </a-mixin>
  
   </a-assets>
-<a-entity mixin="text" id="Target"></a-entity>
+		
+<a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'>	
+       <a-entity mixin="text" id="Target"></a-entity>
 
        <a-cylinder id="ground"  radius="30" height="0.1" material="opacity:0.0" static-body></a-cylinder>
-
-
-                    <a-marker-camera preset='hiro'></a-marker-camera>
-
+</a-marker>                   
+                   <!-- <a-marker-camera preset='hiro'></a-marker-camera>-->
+                   <a-entity camera></a-entity>
                  
  
   </a-scene>
@@ -81,8 +95,9 @@ depth: Tdepth
 //});    
 	
 var Scena = document.querySelector('a-scene');
+var marKer =Scena.document.querySelector('#animated-marker');
    
-Scena.appendChild(TexT); 
+marKer.appendChild(TexT); 
 
 }, 100);
 };
