@@ -15,7 +15,8 @@
 
         animatedMarker.addEventListener('click', function(ev){
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
-                StartPanic();
+		    alert();
+                //StartPanic();
             }
         });
 }});
@@ -33,13 +34,14 @@
  
   </a-assets>
 		
-<a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'>	
+
        <a-entity mixin="text" id="Target"></a-entity>
 
        <a-cylinder id="ground"  radius="30" height="0.1" material="opacity:0.1" static-body></a-cylinder>
-</a-marker>                   
-                   <!-- <a-marker-camera preset='hiro'></a-marker-camera>-->
-                   <a-entity camera></a-entity>
+                 
+                  <a-marker-camera markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'>
+		</a-marker-camera>
+                  
                  
  
   </a-scene>
@@ -85,7 +87,7 @@ depth: Tdepth
 var Scena = document.querySelector('a-scene');
 var marKer =Scena.document.querySelector('#animated-marker');
    
-marKer.appendChild(TexT); 
+Scena.appendChild(TexT); 
 
 }, 100);
 };
