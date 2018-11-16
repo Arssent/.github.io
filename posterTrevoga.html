@@ -8,8 +8,10 @@
 	<a-scene embedded arjs='sourceType: webcam;'>
         <a-assets>
     <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+   <a-asset-item id="tree-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/alarm.obj"></a-asset-item>
+  <a-asset-item id="tree-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/alarm.mtl"></a-asset-item>
         <a-mixin id="text"
-       geometry="primitive: box; height: 0.5; width: 0.2; depth: 0.2" position="-0 0.4 -0.5"   dynamic-body="shape: box"  height="0.2" width="1"  depth="1"
+       geometry="primitive: box; height: 0.5; width: 0.2; depth: 0.2" position="-0 0.4 -0.5"  obj-model="obj: #tree-obj; mtl: #tree-mtl"  dynamic-body="shape: box"  height="0.2" width="1"  depth="1"
        material="shader: standard; color:black"
 </a-mixin>
  
@@ -54,6 +56,13 @@ TexT.setAttribute('mixin', 'text');
    shape: 'box',
     mass: 2
 });       
+	
+	 TexT.setAttribute('obj-model', 
+   {
+   obj: '#tree-obj',
+    mtl: '#tree-mtl'
+});    
+	
 var Scena = document.querySelector('a-scene');
    
 Scena.appendChild(TexT); 
