@@ -28,7 +28,21 @@
  
   </a-scene>
      <script>
+	var GetStart = setInterval(function() {
+  
+var Target = document.querySelector('#Target');
+var TargetPos = Target.getAttribute('position');
 
+if(TargetPos.y>0.143){
+	if(TargetPos.y<0.144){
+		alert();
+	//StartPanic();
+
+	//clearInterval(GetStart);
+       
+                             }
+	            }
+}, 500);
 	     
 function StartPanic(){
   var Theight=0.5;
@@ -73,21 +87,7 @@ Scena.appendChild(TexT);
 }, 100);
 };
 	     
-	var GetStart = setInterval(function() {
-  
-var Target = document.querySelector('#Target');
-var TargetPos = Target.getAttribute('position');
 
-if(TargetPos.y>0.143){
-	if(TargetPos.y<0.145){
-		alert();
-	//StartPanic();
-
-	//clearInterval(GetStart);
-       
-       }
-	            }
-}, 500);
 	     
 
 	</script>                
