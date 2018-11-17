@@ -1,20 +1,98 @@
 <!DOCTYPE html>
+ <head>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.2.0/dist/aframe-physics-system.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam;'>
 
-              
-                     <!-- https://raw.githubusercontent.com/Arssent/arssent.github.io/master/N_AR.mp4 --->
-                     <a-video src="https://arssent.github.io/N_AR.mp4"  rotation="-90 0 0" width="1" height="1.43"></a-video>
-                    <a-marker-camera preset='hiro'></a-marker-camera>
+<script>
+	var Gooo=0;
+	     
+function StartPanic(){
+  var Theight=0.5;
+  var Twidth=0.1;
+  var Tdepth=0.2;
+  var X=0;
+var panic= setInterval(function() {
+ if(X<300){
+X=0;
+ Theight+=0.005;
+ Twidth+=0.001;
+ Tdepth+=0.002;
+};
+X++;  
+var TexT = document.createElement('a-entity');
+TexT.setAttribute('mixin', 'text');
+    TexT.setAttribute('geometry', {
+ primitive: 'box',
+ height: Theight,
+ width: Twidth,
+depth: Tdepth
+});
+	
+     TexT.setAttribute('dynamic-body', 
+   {
+   shape: 'box',
+    mass: 2
+});       
+	
+	// TexT.setAttribute('obj-model', 
+ //  {
+   //obj: '#tree-obj',
+    //mtl: '#tree-mtl'
+//});    
+	
+var Scena = document.querySelector('a-scene');
+//var marKer =Scena.document.querySelector('#animated-marker');
+   //alert('go!!!');
+Scena.appendChild(TexT); 
+}, 100);
+};
+     
+	
+	
+	AFRAME.registerComponent('markerhandler', {
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+        animatedMarker.addEventListener('click', function(ev){  StartPanic();
+                
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
+		    
+            }
+        });
+}});
+</script>
+	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+        <a-assets>
+    <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+  <img id="my-texture" src="https://image.ibb.co/cjCo4f/Textback.jpg">
+   
+         <a-mixin id="text"
+       geometry="primitive: box; height: 0.5; width: 0.2; depth: 0.2" position="-0 0.4 -0.5"  
+  dynamic-body="shape: box"  height="0.2" width="1"  depth="1"
+       material="src: #my-texture"
+</a-mixin>
+ 
+  </a-assets>
+		
 
+       <a-entity mixin="text" id="Target"></a-entity>
+
+       <a-cylinder id="ground"  radius="30" height="0.1" material="opacity:0.1" static-body></a-cylinder>
                  
-                 <!--- <a-video src="sh_AR.mp4"  rotation="-90 0 0" width="1" height="1.43"></a-video>
-                 <a-marker-camera type="pattern" patternUrl='pattern-marker.patt'></a-marker-camera>--->
+                  <a-marker-camera markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'>
+		</a-marker-camera>
                   
+                 
+ 
+  </a-scene>
+     <script>
+	setTimeout(function() { StartPanic(); }, 7000);
+	
+	     
+	</script>                
 	</a-scene>
 </body>
-
-
