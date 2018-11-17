@@ -12,12 +12,7 @@
 	var Gooo=0;
 
      
-var Sart= setInterval(function() {
-	if(Gooo==1){
-	StartPanic();	
-	}
-}, 100);
-};
+
 	
 	
 	AFRAME.registerComponent('markerhandler', {
@@ -25,7 +20,7 @@ var Sart= setInterval(function() {
     init: function() {
         const animatedMarker = document.querySelector("#animated-marker");
 
-        animatedMarker.addEventListener('click', function(ev){ alert('b'); 
+        animatedMarker.addEventListener('click', function(ev){ alert('b') StartPanic();
                 
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
 		    
@@ -105,7 +100,7 @@ Scena.appendChild(TexT);
 };
 	
 	
-StartPanic();
+
 	     
 
 	</script>                
