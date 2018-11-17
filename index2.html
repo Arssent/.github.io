@@ -7,16 +7,67 @@
 	 </head>
 <body style='margin : 0px; overflow: hidden;'>
 
+
+
+<script>
+
+	     
+function StartPanic(){
+       
+  var Theight=1;
+  var Twidth=2;
+  var Tdepth=0.1;
+  var Tsize=0.3;
+  var X=0;
+
+var panic= setInterval(function() {
+
+ if(X<300){
+X=0;
+ Theight+=0.005;
+ Twidth+=0.001;
+ Tdepth+=0.002;
+   Tsize+=0.005;
+//alert(Tdepth);
+};
+X++;  
+var TexT = document.createElement('a-entity');
+TexT.innerHTML='<a-entity geometry="primitive: box; height: '+Theight+'; width: '+Twidth+'; depth: '+Tdepth+'" position="-0 1 -0.5"  dynamic-body="shape: box" material="opacity:0.0"><a-entity text-geometry="value: PANIC; size:'+Tsize+'"  material="color:black;" dynamic-body="shape: box"></a-entity></a-entity>';     
+var Scena = document.querySelector('a-scene');   
+Scena.appendChild(TexT); 
+}, 100);
+};
+     
+	
+	
+	AFRAME.registerComponent('markerhandler', {
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+        animatedMarker.addEventListener('click', function(ev){  StartPanic();
+                
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
+		    
+            }
+        });
+}});
+</script>
+
+
+
 	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
    <a-assets>
       <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
-      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
  
 
     </a-assets>
 
          
+<a-entity id="text" geometry="primitive: box; height: 1; width: 2.4; depth: 0.5" position="-0 2 -0.5"  dynamic-body="shape: box" material="opacity:0.0" >
+   <a-entity text-geometry="value: PANIC; size:0.3"  material="color:black;" dynamic-body="shape: box"></a-entity>
+ </a-entity>
+
+
 
              <a-cylinder id="ground" src="#groundTexture" radius="32" height="0.1" material="opacity:0.1" static-body ></a-cylinder>
                  
