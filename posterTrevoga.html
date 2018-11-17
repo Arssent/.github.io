@@ -9,7 +9,8 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <script>
-	
+	var Gooo=0;
+
 	     
 function StartPanic(){
   var Theight=0.5;
@@ -55,7 +56,12 @@ Scena.appendChild(TexT);
 }, 100);
 };
 	     
-	
+var Sart= setInterval(function() {
+	if(Gooo==1){
+	StartPanic();	
+	}
+}, 100);
+};
 	
 	
 	AFRAME.registerComponent('markerhandler', {
@@ -63,7 +69,7 @@ Scena.appendChild(TexT);
     init: function() {
         const animatedMarker = document.querySelector("#animated-marker");
 
-        animatedMarker.addEventListener('click', function(ev){alert('b'); StartPanic();
+        animatedMarker.addEventListener('click', function(ev){ Gooo=1; alert('b'); StartPanic();
                 
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
 		    
