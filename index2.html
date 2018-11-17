@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> 
   <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
-   <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.2.0/dist/aframe-physics-system.min.js"></script>
+   <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.2.0/dist/aframe-physics-system.min.js"></script>
 	 </head>
 <body style='margin : 0px; overflow: hidden;'>
 
@@ -16,9 +16,7 @@
 
     </a-assets>
 
-         <a-entity id="text" geometry="primitive: box; height: 1; width: 2.4; depth: 0.5" position="-0 2 -0.5"  dynamic-body="shape: box" material="opacity:0.0" >
-   <a-entity text-geometry="value: PANIC; size:0.3"  material="color:black;" dynamic-body="shape: box"></a-entity>
- </a-entity>
+         
 
              <a-cylinder id="ground" src="#groundTexture" radius="32" height="0.1" material="opacity:0.1" static-body ></a-cylinder>
                  
