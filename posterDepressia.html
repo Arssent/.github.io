@@ -17,18 +17,59 @@
 	
 var Y=0;
 
+	function Upp(){
+	var Up = setInterval(function() {
+   clearInterval(Down);
+   Y=Y+0.1;
+   var depress = document.querySelector('#depressia');
+  var ocean = document.querySelector("#ocean");
+  var depressPos=depress.getAttribute('position');
+   var depressPosY=depressPos.y;
+   var depressPosY=depressPosY+Y;
+   depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
+
+ var Opacity =ocean.getAttribute('material').opacity;
+ Opacity+=0.1;
+ ocean.setAttribute('material', 'color', 'black', 'opacity', Opacity, 'metalness' 0, 'roughness', 1);
+  alert( "тик" );
+}, 100);
+	};
+	
+	
+	
+	
+function Downn(){
+	
+	var Down = setInterval(function() {
+   clearInterval(Up);
+   Y=Y+0.1;
+   var depress = document.querySelector('#depressia');
+  var ocean = document.querySelector("#ocean");
+  var depressPos=depress.getAttribute('position');
+  var depressPosY=depressPos.y;
+   var depressPosY=depressPosY-Y;
+   depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
+
+ var Opacity =ocean.getAttribute('material').opacity;
+ Opacity-=0.1;
+ ocean.setAttribute('material', 'color', 'black', 'opacity', Opacity, 'metalness' 0, 'roughness', 1);
+  alert( "тик" );
+}, 100);
+};
+	
+	
+	
 	AFRAME.registerComponent('markerhandler', {
     init: function() {
         const animatedMarker = document.querySelector("#animated-marker");
-        animatedMarker.addEventListener('click', function(ev){
-            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { var Up = setInterval(function() { clearInterval(Down); Y=Y+0.1;var depress = document.querySelector('#depressia');var ocean = document.querySelector("#ocean");var depressPos=depress.getAttribute('position');var depressPosY=depressPos.y;var depressPosY=depressPosY+Y; depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});var Opacity =ocean.getAttribute('material').opacity; Opacity+=0.1; ocean.setAttribute('material', 'color', 'black', 'opacity', Opacity, 'metalness' 0, 'roughness', 1); alert( "тик" ); }, 100);
-		    
+        animatedMarker.addEventListener('click', function(ev){ Upp();
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
             }
         });
-	    animatedMarker.addEventListener('mousedown', function(ev){ alert('нажали'); 
+	    animatedMarker.addEventListener('mousedown', function(ev){ alert('нажали'); Downn();
 
   
-            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
 		    
             }
         });
