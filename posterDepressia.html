@@ -19,7 +19,7 @@ var Y=0;
 
 	function Upp(){
 	var Up = setInterval(function() {
-   clearInterval(Down);
+   //clearInterval(Down);
    Y=Y+0.1;
    var depress = document.querySelector('#depressia');
   var ocean = document.querySelector("#ocean");
@@ -41,7 +41,7 @@ var Y=0;
 function Downn(){
 	
 	var Down = setInterval(function() {
-   clearInterval(Up);
+   //clearInterval(Up);
    Y=Y+0.1;
    var depress = document.querySelector('#depressia');
   var ocean = document.querySelector("#ocean");
@@ -52,7 +52,7 @@ function Downn(){
 
  var Opacity =ocean.getAttribute('material').opacity;
  Opacity-=0.1;
- ocean.setAttribute('material', 'color', 'black', 'opacity', Opacity, 'metalness' 0, 'roughness', 1);
+ ocean.setAttribute('material', 'opacity', Opacity);
   alert( "тик" );
 }, 100);
 };
