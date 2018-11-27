@@ -16,13 +16,13 @@
 <script>
 	
 var Y=0;
-
+   var depress = document.querySelector('#depressia');
+  var ocean = document.querySelector("#ocean");
 	function Upp(){
 	var Up = setInterval(function() {
    //clearInterval(Down);
    Y=Y+0.1;
-   var depress = document.querySelector('#depressia');
-  var ocean = document.querySelector("#ocean");
+
   var depressPos=depress.getAttribute('position');
    var depressPosY=depressPos.y;
    var depressPosY=depressPosY+Y;
@@ -43,8 +43,6 @@ function Downn(){
 	var Down = setInterval(function() {
    //clearInterval(Up);
    Y=Y+0.1;
-   var depress = document.querySelector('#depressia');
-  var ocean = document.querySelector("#ocean");
   var depressPos=depress.getAttribute('position');
   var depressPosY=depressPos.y;
    var depressPosY=depressPosY-Y;
