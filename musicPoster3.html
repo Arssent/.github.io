@@ -1,0 +1,278 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+
+
+
+<script>
+var On=0.1;
+var w = window,
+    d = document,
+    MP3_PATH = 'test3.ogg',
+    MAX_PARTICLES = 50,
+    MAX_BIRDS = 10,
+    TWO_PI = Math.PI * 2,
+    SMOOTHING = 0.3,
+    FURIE = 512,
+    RADIUS = {
+        MAX: 80.0,
+        MIN: 10.0
+    },
+    SIZE = {
+        MIN: 0.5,
+        MAX: 1.25
+    },
+    OPACITY = {
+        MIN: 0.4,
+        MAX: 0.8
+    },
+    SPEED = {
+        MIN: 0.2,
+        MAX: 1
+    },
+    BIRD_SPEED = {
+        MIN: 3.5,
+        MAX: 4.2
+    },
+    BIRD_JUMP = {
+        MIN: 20,
+        MAX: 30
+    },
+    IMAGES = ['img/red.png','img/ell.png','img/blue.png','img/black.png','img/white.png'],
+    COLORS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423']; //цвета частиц
+    var WoolAnalaser = function () {
+        "use strict";
+        var ctx = null,
+        canva = null,
+        config = null,
+        particles = [],
+        rope = null,
+        birds = [],
+        audio = null,
+         
+        input = d.querySelector('#song'),
+        that = this;
+        config = this.config = {
+            fullscreen: true,
+            interval: 10,
+            type: "canvas"
+        };
+        /*
+        * Конструктор анализатора
+        */
+        var Analyse = function () {
+            var _that = this,
+            AudioContext = w.AudioContext || w.webkitAudioContext;
+            this.audio = new Audio();
+            this.audio.src = MP3_PATH;
+            this.audio.controls = true;
+            this.context = new AudioContext();
+            this.node = this.context.createScriptProcessor(2048, 1, 1);
+            //Анализатор
+            this.analyser = this.context.createAnalyser();
+            this.analyser.smoothingTimeConstant = SMOOTHING;
+            this.analyser.fftSize = FURIE;
+            this.bands = new Uint8Array(this.analyser.frequencyBinCount);
+            console.log(this.bands);
+            this.audio.addEventListener('canplay', function () {
+                if (!_that.source) {
+                    _that.source = _that.context.createMediaElementSource(_that.audio);
+                    _that.source.connect(_that.analyser);
+                    _that.analyser.connect(_that.node);
+                    _that.node.connect(_that.context.destination);
+                    _that.source.connect(_that.context.destination);
+                    _that.node.onaudioprocess = function () {
+                        _that.analyser.getByteFrequencyData(_that.bands);
+                        if (!_that.audio.paused) {
+                            return typeof _that.update === "function" ? _that.update(_that.bands) : 0;
+                        }
+                    };
+                }
+            });
+            return this;
+        };
+        /*
+        * Кконструктор частиц
+        */
+        
+         
+        /*
+        * Веревка
+        */
+        
+        /*
+        * Птички
+        */
+        var Bird = function () {
+            this.init();
+        };
+        Bird.prototype = {
+            init: function () {
+                
+                this.band = Math.floor(that.random(128));
+                this.BoXx=document.querySelector('#fire');
+               /// this.Likvid=document.querySelector('#test1');
+                
+            },
+            draw: function () {
+		var Distance =0.2;
+		var Intensity =6;
+                var pulse = Math.exp(this.pulse) || 1;
+                var X=0.13;
+                var Y=0.2;
+                var Z=0.132;
+                //X=X * pulse;
+                Distance=Distance * pulse * On;
+		Intensity=Intensity * pulse * On;
+               
+               this.BoXx.setAttribute('distance', Distance );
+	       this.BoXx.setAttribute('intensity', Intensity );
+              ///this.Likvid.setAttribute('scale', {x: lik1X, y: lik1Y, z: lik1Z});
+                
+            } 
+        };
+        /*
+        * Создает конву
+        */
+        this.init = function (contener) {
+            this.createParticles();
+        };
+        /*
+        * Создает частицы
+        */
+        this.createParticles = function () {
+            var particle = null, audio = null;
+            //круги
+            
+            //Птички
+   
+                birds.push(new Bird());
+            try {
+                audio = new Analyse();
+                d.body.appendChild(audio.audio);
+                input.addEventListener('change', function () {
+                    var song = this.value,
+                        fReader = new FileReader();
+                    fReader.readAsDataURL(this.files[0]);
+                    fReader.onloadend = function (event) {
+                        var e = event || w.event;
+                        audio.audio.src = e.target.result;
+                        audio.audio.load();
+                    };
+                }, false);
+                audio.update = function (bands) {
+                    var ln = MAX_PARTICLES,
+                        bLn = MAX_BIRDS;
+                    
+                    
+                        var bird = birds[0];
+                        bird.pulse = bands[bird.band] / 256;
+                    
+                };
+            } catch (e) {
+                throw ('Ваш барузер не поддержывает audio Api');
+            }
+            setInterval(that.action, this.config.interval);
+        }
+        /*
+        * Добавляет частицы в конву и анимирует их
+        */
+        this.action = function () {
+            var ln = MAX_PARTICLES;
+  
+                var loc = birds[0];
+                loc.draw();
+ 
+        }
+        /*
+        * Чистит конву перед следующей анимацией
+        */
+        this.clear = function () {
+           
+        };
+    };
+WoolAnalaser.prototype = {
+    /*
+    * Создает конву на странице
+    * @param {Object} contener - dom объект элемента для вставки конвы
+    * @return {Object} context - контекст созданной конвы
+    */
+    createCanvas: function (contener) {
+        var config = this.config,
+            canvas = null,
+            context = null;
+        return context;
+    },
+    /*
+    * Выбор рандомного значения
+    */
+    random: function( min, max ) {
+        if (this.isArray( min )) {
+            return min[ ~~( Math.random() * min.length ) ];
+        }
+        if (!this.isNumber(max)) {
+            max = min || 1, min = 0;
+        }
+        return min + Math.random() * ( max - min ); 
+    },
+    /*
+    * Проверка на массив
+    */
+    isArray: function(object) {
+        return Object.prototype.toString.call( object ) == '[object Array]';
+    },
+    isNumber: function(object) {
+        return typeof object == 'number';
+    }
+};
+w.onload = function () {
+    var analyser = new WoolAnalaser ();
+    analyser.init(d.querySelector('#target'));
+};
+</script>	
+	
+<script>
+	AFRAME.registerComponent('markerhandler', {
+    init: function() {
+	    var svet =document.querySelector('#fire');
+        const animatedMarker = document.querySelector("#animated-marker");
+        animatedMarker.addEventListener('click', function(ev){On=0; var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; svet.setAttribute('position', {x: X, y: 0.97, z: Z});
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
+            }
+        });
+	    animatedMarker.addEventListener('mousedown', function(ev){On=0.1; var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; svet.setAttribute('position', {x: X, y: 0.97, z: Z});
+  
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
+		    
+            }
+        });
+}});
+</script>
+	<div class="poster">
+	<a-scene embedded arjs='sourceType: webcam;'>
+   <a-assets>
+    <a-asset-item id="MainModel" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2FMModel2.obj?1543354900747"></a-asset-item>
+  
+    <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">>
+
+    <img id="poster" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Fposter%20word.jpg">
+  </a-assets>
+  
+
+  
+  <a-entity id="PosteR" scale="0.13 0.5 0.132"  obj-model="obj: #MainModel; " position="-0.5 1 -0.5" material="color:white"></a-entity>
+   <a-light id="fire" type="point" color="red" position="0 0.97 0" intensity ="6" distance ="0.30" ></a-light>
+  <a-box  depth="1.5" height="0.2" width="1" position="0 0.8 0"> </a-box>
+ <a-marker-camera markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'></a-marker-camera>>
+  
+</a-scene>
+	</div>
+<div id="target"></div>
+<input type="file" id="song"/>
+</body>
+</html>
