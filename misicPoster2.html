@@ -11,7 +11,228 @@
 
 
 <script>
+var w = window,
+    d = document,
+    MP3_PATH = 'test3.ogg',
+    MAX_PARTICLES = 50,
+    MAX_BIRDS = 10,
+    TWO_PI = Math.PI * 2,
+    SMOOTHING = 0.3,
+    FURIE = 512,
+    RADIUS = {
+        MAX: 80.0,
+        MIN: 10.0
+    },
+    SIZE = {
+        MIN: 0.5,
+        MAX: 1.25
+    },
+    OPACITY = {
+        MIN: 0.4,
+        MAX: 0.8
+    },
+    SPEED = {
+        MIN: 0.2,
+        MAX: 1
+    },
+    BIRD_SPEED = {
+        MIN: 3.5,
+        MAX: 4.2
+    },
+    BIRD_JUMP = {
+        MIN: 20,
+        MAX: 30
+    },
+    IMAGES = ['img/red.png','img/ell.png','img/blue.png','img/black.png','img/white.png'],
+    COLORS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423']; //цвета частиц
+    var WoolAnalaser = function () {
+        "use strict";
+        var ctx = null,
+        canva = null,
+        config = null,
+        particles = [],
+        rope = null,
+        birds = [],
+        audio = null,
+         
+        input = d.querySelector('#song'),
+        that = this;
+        config = this.config = {
+            fullscreen: true,
+            interval: 10,
+            type: "canvas"
+        };
+        /*
+        * Конструктор анализатора
+        */
+        var Analyse = function () {
+            var _that = this,
+            AudioContext = w.AudioContext || w.webkitAudioContext;
+            this.audio = new Audio();
+            this.audio.src = MP3_PATH;
+            this.audio.controls = true;
+            this.context = new AudioContext();
+            this.node = this.context.createScriptProcessor(2048, 1, 1);
+            //Анализатор
+            this.analyser = this.context.createAnalyser();
+            this.analyser.smoothingTimeConstant = SMOOTHING;
+            this.analyser.fftSize = FURIE;
+            this.bands = new Uint8Array(this.analyser.frequencyBinCount);
+            console.log(this.bands);
+            this.audio.addEventListener('canplay', function () {
+                if (!_that.source) {
+                    _that.source = _that.context.createMediaElementSource(_that.audio);
+                    _that.source.connect(_that.analyser);
+                    _that.analyser.connect(_that.node);
+                    _that.node.connect(_that.context.destination);
+                    _that.source.connect(_that.context.destination);
+                    _that.node.onaudioprocess = function () {
+                        _that.analyser.getByteFrequencyData(_that.bands);
+                        if (!_that.audio.paused) {
+                            return typeof _that.update === "function" ? _that.update(_that.bands) : 0;
+                        }
+                    };
+                }
+            });
+            return this;
+        };
+        /*
+        * Кконструктор частиц
+        */
+        
+         
+        /*
+        * Веревка
+        */
+        
+        /*
+        * Птички
+        */
+        var Bird = function () {
+            this.init();
+        };
+        Bird.prototype = {
+            init: function () {
+                
+                this.band = Math.floor(that.random(128));
+                //this.BoXx=document.querySelector('#fire');
+               /// this.Likvid=document.querySelector('#test1');
+                
+            },
+            draw: function () {
+		var Distance =0.30;
+                var pulse = Math.exp(this.pulse) || 1;
+                var X=0.13;
+                var Y=0.2;
+                var Z=0.132;
+                //X=X * pulse;
+                Distance=Distance * pulse *2;
+               
+               //this.BoXx.setAttribute('distance', Distance );
+              ///this.Likvid.setAttribute('scale', {x: lik1X, y: lik1Y, z: lik1Z});
+                
+            }
+        };
+        /*
+        * Создает конву
+        */
+        this.init = function (contener) {
+            this.createParticles();
+        };
+        /*
+        * Создает частицы
+        */
+        this.createParticles = function () {
+            var particle = null, audio = null;
+            //круги
+            
+            //Птички
+   
+                birds.push(new Bird());
+            try {
+                audio = new Analyse();
+                d.body.appendChild(audio.audio);
+                input.addEventListener('change', function () {
+                    var song = this.value,
+                        fReader = new FileReader();
+                    fReader.readAsDataURL(this.files[0]);
+                    fReader.onloadend = function (event) {
+                        var e = event || w.event;
+                        audio.audio.src = e.target.result;
+                        audio.audio.load();
+                    };
+                }, false);
+                audio.update = function (bands) {
+                    var ln = MAX_PARTICLES,
+                        bLn = MAX_BIRDS;
+                    
+                    
+                        var bird = birds[0];
+                        bird.pulse = bands[bird.band] / 256;
+                    
+                };
+            } catch (e) {
+                throw ('Ваш барузер не поддержывает audio Api');
+            }
+            setInterval(that.action, this.config.interval);
+        }
+        /*
+        * Добавляет частицы в конву и анимирует их
+        */
+        this.action = function () {
+            var ln = MAX_PARTICLES;
+  
+                var loc = birds[0];
+                loc.draw();
+ 
+        }
+        /*
+        * Чистит конву перед следующей анимацией
+        */
+        this.clear = function () {
+           
+        };
+    };
+WoolAnalaser.prototype = {
+    /*
+    * Создает конву на странице
+    * @param {Object} contener - dom объект элемента для вставки конвы
+    * @return {Object} context - контекст созданной конвы
+    */
+    createCanvas: function (contener) {
+        var config = this.config,
+            canvas = null,
+            context = null;
+        return context;
+    },
+    /*
+    * Выбор рандомного значения
+    */
+    random: function( min, max ) {
+        if (this.isArray( min )) {
+            return min[ ~~( Math.random() * min.length ) ];
+        }
+        if (!this.isNumber(max)) {
+            max = min || 1, min = 0;
+        }
+        return min + Math.random() * ( max - min ); 
+    },
+    /*
+    * Проверка на массив
+    */
+    isArray: function(object) {
+        return Object.prototype.toString.call( object ) == '[object Array]';
+    },
+    isNumber: function(object) {
+        return typeof object == 'number';
+    }
+};
+w.onload = function () {
+    var analyser = new WoolAnalaser ();
+    analyser.init(d.querySelector('#target'));
+};
 
+	
 	
 	AFRAME.registerComponent('markerhandler', {
     init: function() {
