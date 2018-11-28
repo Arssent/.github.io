@@ -20,7 +20,7 @@
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
             }
         });
-	    animatedMarker.addEventListener('mousedown', function(ev){ console.log(ev.intersection);
+	    animatedMarker.addEventListener('mousedown', function(ev){ console.log(ev.detail.intersection.point);
   
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
 		    
