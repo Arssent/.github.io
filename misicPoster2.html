@@ -16,7 +16,7 @@
 	AFRAME.registerComponent('markerhandler', {
     init: function() {
         const animatedMarker = document.querySelector("#animated-marker");
-        animatedMarker.addEventListener('click', function(ev){ console.log(ev.intersection);
+        animatedMarker.addEventListener('click', function(ev){ console.log(ev);
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
             }
         });
