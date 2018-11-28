@@ -1,0 +1,316 @@
+<html>
+   <head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+  
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+</head>
+  <body style='margin : 0px; overflow: hidden;'>
+<script>
+var w = window,
+    d = document,
+    MP3_PATH = 'test3.ogg',
+    MAX_PARTICLES = 50,
+    MAX_BIRDS = 10,
+    TWO_PI = Math.PI * 2,
+    SMOOTHING = 0.3,
+    FURIE = 512,
+    RADIUS = {
+        MAX: 80.0,
+        MIN: 10.0
+    },
+    SIZE = {
+        MIN: 0.5,
+        MAX: 1.25
+    },
+    OPACITY = {
+        MIN: 0.4,
+        MAX: 0.8
+    },
+    SPEED = {
+        MIN: 0.2,
+        MAX: 1
+    },
+    BIRD_SPEED = {
+        MIN: 3.5,
+        MAX: 4.2
+    },
+    BIRD_JUMP = {
+        MIN: 20,
+        MAX: 30
+    },
+    IMAGES = ['img/red.png','img/ell.png','img/blue.png','img/black.png','img/white.png'],
+    COLORS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423']; //цвета частиц
+    var WoolAnalaser = function () {
+        "use strict";
+        var ctx = null,
+        canva = null,
+        config = null,
+        particles = [],
+        rope = null,
+        birds = [],
+        audio = null,
+         
+        input = d.querySelector('#song'),
+        that = this;
+        config = this.config = {
+            fullscreen: true,
+            interval: 10,
+            type: "canvas"
+        };
+        /*
+        * Конструктор анализатора
+        */
+        var Analyse = function () {
+            var _that = this,
+            var AudioContext = window.AudioContext // Default
+    || window.webkitAudioContext // Safari and old versions of Chrome
+    || false; 
+
+if (AudioContext) {
+    // Do whatever you want using the Web Audio API
+    var ctx = new AudioContext;
+    // ...
+} else {
+    // Web Audio API is not supported
+    // Alert the user
+    alert("аудио api не поддерживается");
+}
+            this.audio = new Audio();
+            this.audio.src = MP3_PATH;
+            this.audio.controls = true;
+            this.context = new AudioContext();
+            this.node = this.context.createScriptProcessor(2048, 1, 1);
+            //Анализатор
+            this.analyser = this.context.createAnalyser();
+            this.analyser.smoothingTimeConstant = SMOOTHING;
+            this.analyser.fftSize = FURIE;
+            this.bands = new Uint8Array(this.analyser.frequencyBinCount);
+            console.log(this.bands);
+            this.audio.addEventListener('canplay', function () {
+                if (!_that.source) {
+                    _that.source = _that.context.createMediaElementSource(_that.audio);
+                    _that.source.connect(_that.analyser);
+                    _that.analyser.connect(_that.node);
+                    _that.node.connect(_that.context.destination);
+                    _that.source.connect(_that.context.destination);
+                    _that.node.onaudioprocess = function () {
+                        _that.analyser.getByteFrequencyData(_that.bands);
+                        if (!_that.audio.paused) {
+                            return typeof _that.update === "function" ? _that.update(_that.bands) : 0;
+                        }
+                    };
+                }
+            });
+            return this;
+        };
+        /*
+        * Кконструктор частиц
+        */
+        
+         
+        /*
+        * Веревка
+        */
+        
+        /*
+        * Птички
+        */
+        var Bird = function () {
+            this.init();
+        };
+        Bird.prototype = {
+            init: function () {
+                
+                this.band = Math.floor(that.random(128));
+                this.BoXx=document.querySelector('#test3');
+                this.Likvid=document.querySelector('#test1');
+                
+            },
+            draw: function () {
+                var pulse = Math.exp(this.pulse) || 1;
+                var X=0.13;
+                var Y=0.2;
+                var Z=0.132;
+                //X=X * pulse;
+                Y=Y * pulse *2;
+               /// Z=Z * pulse;
+                //alert(Y);
+             
+               
+              var lik1X =0.121;
+              var lik1Y =0.1;
+              var lik1Z =0.1;
+             //lik1X=lik1X * pulse;
+             // lik1X=lik1Y * pulse;
+             //lik1Z=lik1Z * pulse;
+                lik1Y=lik1Y * pulse;
+               if(Y<=0.5){
+               Y=0.1;
+                   };
+              ///alert(Y);
+               if(Y>0.7){
+               Y=Y*2;
+                   };
+               this.BoXx.setAttribute('scale', {x: X, y: Y, z: Z});
+               this.Likvid.setAttribute('scale', {x: lik1X, y: lik1Y, z: lik1Z});
+                
+            }
+        };
+        /*
+        * Создает конву
+        */
+        this.init = function (contener) {
+            this.createParticles();
+        };
+        /*
+        * Создает частицы
+        */
+        this.createParticles = function () {
+            var particle = null, audio = null;
+            //круги
+            
+            //Птички
+   
+                birds.push(new Bird());
+            try {
+                audio = new Analyse();
+                d.body.appendChild(audio.audio);
+                input.addEventListener('change', function () {
+                    var song = this.value,
+                        fReader = new FileReader();
+                    fReader.readAsDataURL(this.files[0]);
+                    fReader.onloadend = function (event) {
+                        var e = event || w.event;
+                        audio.audio.src = e.target.result;
+                        audio.audio.load();
+                    };
+                }, false);
+                audio.update = function (bands) {
+                    var ln = MAX_PARTICLES,
+                        bLn = MAX_BIRDS;
+                    
+                    
+                        var bird = birds[0];
+                        bird.pulse = bands[bird.band] / 256;
+                    
+                };
+            } catch (e) {
+                throw ('Ваш барузер не поддержывает audio Api');
+            }
+            setInterval(that.action, this.config.interval);
+        }
+        /*
+        * Добавляет частицы в конву и анимирует их
+        */
+        this.action = function () {
+            var ln = MAX_PARTICLES;
+  
+                var loc = birds[0];
+                loc.draw();
+ 
+        }
+        /*
+        * Чистит конву перед следующей анимацией
+        */
+        this.clear = function () {
+           
+        };
+    };
+WoolAnalaser.prototype = {
+    /*
+    * Создает конву на странице
+    * @param {Object} contener - dom объект элемента для вставки конвы
+    * @return {Object} context - контекст созданной конвы
+    */
+    createCanvas: function (contener) {
+        var config = this.config,
+            canvas = null,
+            context = null;
+        return context;
+    },
+    /*
+    * Выбор рандомного значения
+    */
+    random: function( min, max ) {
+        if (this.isArray( min )) {
+            return min[ ~~( Math.random() * min.length ) ];
+        }
+        if (!this.isNumber(max)) {
+            max = min || 1, min = 0;
+        }
+        return min + Math.random() * ( max - min ); 
+    },
+    /*
+    * Проверка на массив
+    */
+    isArray: function(object) {
+        return Object.prototype.toString.call( object ) == '[object Array]';
+    },
+    isNumber: function(object) {
+        return typeof object == 'number';
+    }
+};
+w.onload = function () {
+    var analyser = new WoolAnalaser ();
+    analyser.init(d.querySelector('#target'));
+};
+    </script>
+<div class="poster">
+<a-scene embedded arjs='sourceType: webcam;'>
+  <a-assets>
+ <a-asset-item id="MainModel" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2FModelMain.obj"></a-asset-item>
+  <a-asset-item id="likvidation1" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation1big.obj"></a-asset-item>
+   <a-asset-item id="likvidation2" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation2.obj"></a-asset-item>
+       <a-asset-item id="likvidation3" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation3.obj"></a-asset-item>
+           <a-asset-item id="likvidation4" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation4.obj"></a-asset-item>
+        <a-asset-item id="likvidation5" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation5.obj"></a-asset-item>
+    
+          <a-asset-item id="likvidation6" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation6.obj"></a-asset-item>
+           <a-asset-item id="likvidation7" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation8.obj"></a-asset-item>
+    
+         <a-asset-item id="likvidation8" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation9.obj"></a-asset-item>
+    
+    <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">>
+
+    <img id="poster" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Fposter%20word.jpg">
+  </a-assets>
+  
+
+<a-entity id="test3" scale="0.13 0.11 0.132" obj-model="obj: #MainModel; " position="-0.360 0.7 -0.86" material="color:white"></a-entity>
+  
+
+ 
+  <a-entity id="test1" scale="0.121 0.1 0.1" obj-model="obj: #likvidation1; " position="-0.5 0.7 -0.74" material="color:red"></a-entity>
+   
+    <a-entity id="likvidation2" scale="0.121 0.1 0.1" obj-model="obj: #likvidation2; " position="-0.5 0.7 -0.68" material="color:red"></a-entity>
+  
+      <a-entity id="likvidation3" scale="0.121 0.1 0.1" obj-model="obj: #likvidation3; " position="-0.5 0.7 -0.66" material="color:red"></a-entity>
+  
+       <a-entity id="likvidation4" scale="0.121 0.1 0.1" obj-model="obj: #likvidation4; " position="-0.5 0.7 -0.61" material="color:red"></a-entity>
+  
+         <a-entity id="likvidation5" scale="0.121 0.1 0.1" obj-model="obj: #likvidation5; " position="-0.5 0.7 -0.55" material="color:red"></a-entity>
+    
+         <a-entity id="likvidation6" scale="0.121 0.1 0.1" obj-model="obj: #likvidation6; " position="-0.45 0.7 -0.50" material="color:red"></a-entity>
+  
+           <a-entity id="likvidation7" scale="0.121 0.1 0.1" obj-model="obj: #likvidation7; " position="-0.52 0.7 -0.43" material="color:red"></a-entity>
+  
+             <a-entity id="likvidation8" scale="0.121 0.1 0.1" obj-model="obj: #likvidation8; " position="-0.40 0.7 -0.42" material="color:red"></a-entity>
+ 
+ <a-image id="test" src="#poster"  position="0 0.7 0" width="1" height="1.5" rotation='-90 0 0' material="color:black"></a-image>
+   
+  
+<!--  <a-entity  id="posteR" src="#poster" position="0 0.5 0"  geometry="primitive: plane; height: 1.5; width: 1" rotation='-90 0 0'  material="color:black;  side: double;" ></a-entity>-->
+  
+  
+ 
+ <a-marker-camera preset='hiro'></a-marker-camera>
+  
+</a-scene>
+     </div>
+         <div id="target"></div>
+       <input type="file" id="song"/>
+
+   </body>
+</html>
