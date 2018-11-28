@@ -123,14 +123,17 @@ var w = window,
             },
             draw: function () {
 		var Distance =0.1;
+		var Intensity =6;
                 var pulse = Math.exp(this.pulse) || 1;
                 var X=0.13;
                 var Y=0.2;
                 var Z=0.132;
                 //X=X * pulse;
                 Distance=Distance * pulse;
+		Intensity=Intensity * pulse;
                
                this.BoXx.setAttribute('distance', Distance );
+	       this.BoXx.setAttribute('intensity', Intensity );
               ///this.Likvid.setAttribute('scale', {x: lik1X, y: lik1Y, z: lik1Z});
                 
             }
