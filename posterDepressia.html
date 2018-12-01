@@ -25,7 +25,7 @@ var Y=0;
  var depress = document.querySelector('#depressia');
   var depressPos=depress.getAttribute('position');
    var depressPosY=depressPos.y;
-   var depressPosY=depressPosY+0.5;
+   var depressPosY=depressPosY-0.5;
    depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
 
  //var Opacity =ocean.getAttribute('material').opacity;
@@ -46,13 +46,13 @@ function Downn(){
 var depress2 = document.querySelector('#depressia');
   var depressPos=depress2.getAttribute('position');
   var depressPosY=depressPos.y;
-   var depressPosY=depressPosY-0.5;
+   var depressPosY=depressPosY+0.1;
    depress2.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
 
  //var Opacity =ocean.getAttribute('material').opacity;
  //Opacity-=0.1;
  //ocean.setAttribute('material', 'opacity', Opacity);
-  alert( "тик" );
+  //alert( "тик" );
 }, 1000);
 };
 	
