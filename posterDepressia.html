@@ -23,8 +23,11 @@ var check=0;
 function Downn(check){
 	
 	var Down = setInterval(function() {
-check=1;
 		
+if(check==0){
+check=1;
+clearInterval(Down);
+   }		
    
 var ocean = document.querySelector("#ocean");
 var depress2 = document.querySelector('#depressia');
@@ -46,9 +49,8 @@ Opacity-=0.1;
 if(check==1){
    clearInterval(Up);
 	check=0;
-   }else{
-   clearInterval(Down);
    }
+		
  var depress = document.querySelector('#depressia');
   var depressPos=depress.getAttribute('position');
    var depressPosY=depressPos.y;
