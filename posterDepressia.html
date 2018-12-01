@@ -25,7 +25,7 @@ function Downn(check){
 	var Down = setInterval(function() {
 check=1;
 		
-   Y=Y+0.1;
+   
 var ocean = document.querySelector("#ocean");
 var depress2 = document.querySelector('#depressia');
   var depressPos=depress2.getAttribute('position');
@@ -41,14 +41,14 @@ Opacity-=0.1;
 };
 	
   
-	function Upp(){
+	function Upp(check){
 	var Up = setInterval(function() {
 if(check==1){
    clearInterval(Up);
 	check=0;
    }
    clearInterval(Down);
-   Y=Y+0.1;
+   check=1;
  var depress = document.querySelector('#depressia');
   var depressPos=depress.getAttribute('position');
    var depressPosY=depressPos.y;
@@ -99,7 +99,7 @@ if(check==1){
     <a-entity id="sphere" ></a-entity>
     
           <a-entity id="ocean" ocean="density:10; width: 5; height: 2; depth: 5; speed: 1" material="color: black; opacity: 0.99; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
-    <a-entity  id="ground" position="0 -0.5 0"geometry="primitive: plane; height: 5; width: 5"  rotation="90 0 0" material="opacity:1; color:black; side: double;" ></a-entity>
+    
     <!--<a-cylinder id="ground"  position="0 -0.5 0" radius="2" height="0.1" material="opacity:1; color:black;" ></a-cylinder>-->
 		<a-marker-camera markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'></a-marker-camera>
 	</a-scene>
