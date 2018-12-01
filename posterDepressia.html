@@ -27,6 +27,7 @@ function Downn(check){
 if(check==0){
 check=1;
 clearInterval(Down);
+console.log('Down stop');
    }		
    
 var ocean = document.querySelector("#ocean");
@@ -49,6 +50,7 @@ Opacity-=0.1;
 if(check==1){
    clearInterval(Up);
 	check=0;
+	console.log('Up stop');
    }
 var ocean2 = document.querySelector("#ocean");		
  var depress = document.querySelector('#depressia');
@@ -59,7 +61,7 @@ var ocean2 = document.querySelector("#ocean");
 
  var Opacity =ocean2.getAttribute('material').opacity;
 Opacity+=0.1;
-console.log(Opacity);
+//console.log(Opacity);
  ocean2.setAttribute('material', 'opacity', Opacity);
   //alert( "тик" );
 }, 1000);
