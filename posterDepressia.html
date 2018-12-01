@@ -73,7 +73,8 @@ Opacity+=0.1;
 	
 	
 function Go(do){	
-
+	alert(do);
+/*
 if(do==1){
 	
 	var Down = setInterval(function() {
@@ -82,7 +83,7 @@ if(do==1){
 clearInterval(Up);
 console.log('Up stop');
 		
-   console.log(check);
+  
 var ocean = document.querySelector("#ocean");
 var depress2 = document.querySelector('#depressia');
   var depressPos=depress2.getAttribute('position');
@@ -120,19 +121,20 @@ Opacity+=0.1;
   //alert( "тик" );
 }, 400);
 }
+*/
 	};
 	
 	
 	
 	AFRAME.registerComponent('markerhandler', {
     init: function() {
-	    var do=0;
+	    var doo=0;
         const animatedMarker = document.querySelector("#animated-marker");
-        animatedMarker.addEventListener('click', function(ev){ Go(do);//Upp();
+        animatedMarker.addEventListener('click', function(ev){ Go(doo);//Upp();
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
             }
         });
-	    animatedMarker.addEventListener('mousedown', function(ev){do=1; Go(do);  //Downn();
+	    animatedMarker.addEventListener('mousedown', function(ev){do=1; Go(doo);  //Downn();
 
   
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
