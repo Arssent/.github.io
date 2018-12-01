@@ -25,12 +25,12 @@ var Y=0;
 
   var depressPos=depress.getAttribute('position');
    var depressPosY=depressPos.y;
-   var depressPosY=depressPosY+Y;
+   var depressPosY=depressPosY+0.5;
    depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
 
- var Opacity =ocean.getAttribute('material').opacity;
- Opacity+=0.1;
- ocean.setAttribute('material', 'opacity', Opacity);
+ //var Opacity =ocean.getAttribute('material').opacity;
+ //Opacity+=0.1;
+ //ocean.setAttribute('material', 'opacity', Opacity);
   alert( "тик" );
 }, 100);
 	};
@@ -45,12 +45,12 @@ function Downn(){
    Y=Y+0.1;
   var depressPos=depress.getAttribute('position');
   var depressPosY=depressPos.y;
-   var depressPosY=depressPosY-Y;
+   var depressPosY=depressPosY-0.5;
    depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
 
- var Opacity =ocean.getAttribute('material').opacity;
- Opacity-=0.1;
- ocean.setAttribute('material', 'opacity', Opacity);
+ //var Opacity =ocean.getAttribute('material').opacity;
+ //Opacity-=0.1;
+ //ocean.setAttribute('material', 'opacity', Opacity);
   alert( "тик" );
 }, 100);
 };
