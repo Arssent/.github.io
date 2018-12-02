@@ -130,6 +130,7 @@ if(Opacity<0){
 	};
 */
 var doo;
+var Doo=0;
 function Goo() {
 	//alert('rr!');
 }
@@ -156,7 +157,7 @@ Opacity+=0.1;
 	AFRAME.registerComponent('markerhandler', {
     init: function() {
 	    var doo=0;
-	    var Doo=0;
+	    
         const animatedMarker = document.querySelector("#animated-marker");
         animatedMarker.addEventListener('click', function(ev){Doo=0;//doo=0;Go(doo);//Upp();
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
