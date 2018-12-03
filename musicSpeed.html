@@ -5,7 +5,7 @@
 </head>
   <body style='margin : 0px; overflow: hidden;'>
 <script>
-   alert();
+  
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -78,10 +78,10 @@ if (AudioContext) {
             this.audio = new Audio();
             this.audio.src = MP3_PATH;
             this.audio.controls = true;
-           ;
+           var test=this.audio;
            this.audio.addEventListener('timeupdate', function(){
     if(!isNaN(test.currentTime)) {
-        this.audio.playbackRate = 0.3;
+        this.audio.playbackRate = 0.5;
         console.log('go');
     }
 });
