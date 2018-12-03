@@ -183,8 +183,9 @@ Opacity+=0.5;
    if(depressPosY>-1){
    depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
 }
+if(Opacity<1){
  ocean.setAttribute('material', 'opacity', Opacity);
-	
+}
 }, 600);
 		dep.setAttribute('vector', 0);//doo=0;Go(doo);//Upp();
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
