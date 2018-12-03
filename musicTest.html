@@ -81,6 +81,11 @@ if (AudioContext) {
             this.audio = new Audio();
             this.audio.src = MP3_PATH;
             this.audio.controls = true;
+           this.audio.addEventListener('timeupdate', function(){
+    if(!isNaN(this.audio.currentTime)) {
+        this.audio.playbackRate = 0.5;
+    }
+});
             this.context = new AudioContext();
             this.node = this.context.createScriptProcessor(2048, 1, 1);
             //Анализатор
