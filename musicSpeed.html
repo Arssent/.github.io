@@ -80,7 +80,7 @@ if (AudioContext) {
             this.audio.src = MP3_PATH;
             this.audio.controls = true;
            this.audio.addEventListener('timeupdate', function(){
-    if(!isNaN(this.audio.currentTime)) {
+    if(!isNaN(audio.currentTime)) {
         this.audio.playbackRate = 0.5;
         alert('go');
     }
