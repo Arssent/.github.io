@@ -79,10 +79,10 @@ if (AudioContext) {
             this.audio = new Audio();
             this.audio.src = MP3_PATH;
             this.audio.controls = true;
-           var test =this.audio;
+           ;
            this.audio.addEventListener('timeupdate', function(){
     if(!isNaN(test.currentTime)) {
-        test.playbackRate = 0.5;
+        this.audio.playbackRate = 0.3;
         //console.log('go');
     }
 });
