@@ -79,12 +79,7 @@ if (AudioContext) {
             this.audio.src = MP3_PATH;
             this.audio.controls = true;
            var test=this.audio;
-           this.audio.addEventListener('timeupdate', function(){
-    if(!isNaN(test.currentTime)) {
-        this.audio.playbackRate = 0.5;
-        console.log('go');
-    }
-});
+          
             this.context = new AudioContext();
             this.node = this.context.createScriptProcessor(2048, 1, 1);
             //Анализатор
@@ -94,6 +89,12 @@ if (AudioContext) {
             this.bands = new Uint8Array(this.analyser.frequencyBinCount);
             console.log(this.bands);
             this.audio.addEventListener('canplay', function () {
+                this.audio.addEventListener('timeupdate', function(){
+    if(!isNaN(test.currentTime)) {
+        this.audio.playbackRate = 0.5;
+        console.log('go');
+    }
+});
                 if (!_that.source) {
                     _that.source = _that.context.createMediaElementSource(_that.audio);
                     _that.source.connect(_that.analyser);
