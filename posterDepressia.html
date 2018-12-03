@@ -181,16 +181,16 @@ var Vector =depress.getAttribute('vector');
   var depressPosY=depressPos.y;
 var Opacity =ocean.getAttribute('material').opacity;
   if(Vector==1){
-   var depressPosY=depressPosY+0.1;
+   var depressPosY=depressPosY+0.01;
    Opacity-=0.1;
 }else{
-var depressPosY=depressPosY-0.1;
+var depressPosY=depressPosY-0.01;
 Opacity+=0.1;
 }
    depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
  ocean.setAttribute('material', 'opacity', Opacity);
 	
-}, 500);
+}, 3000);
 	
 
 //Downn();
