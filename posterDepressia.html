@@ -180,7 +180,9 @@ var Opacity =ocean.getAttribute('material').opacity;
 var depressPosY=depressPosY-0.1;
 Opacity+=0.1;
 }
+   if(depressPosY>-1){
    depress.setAttribute('position', {x: -1.3, y: depressPosY, z: -1});
+}
  ocean.setAttribute('material', 'opacity', Opacity);
 	
 }, 700);
