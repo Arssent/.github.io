@@ -43,8 +43,9 @@ Opacity+=0.1;
    if(depressPosY>-0.6){
    depress.setAttribute('position', {x: -1.3, y: depressPosY, z: 0});
 }
-	if(depressPosY==1){
-   depress.innerHTML='      <a-entity id="sphere" geometry="primitive: sphere" material="color: #EFEFEF; shader: flat" position="-1.3 '+depressPosY+' 0" light="type: point; intensity: 5"></a-entity>';
+	if(depressPosY>1){
+		alert('ho');
+   depress.innerHTML='<a-entity id="depressia" geometry="primitive: sphere" material="color: #EFEFEF; shader: flat" position="-1.3 '+depressPosY+' 0" light="type: point; intensity: 5"></a-entity>';
 }
 if(Opacity<1.5){
  ocean.setAttribute('material', 'opacity', Opacity);
