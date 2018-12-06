@@ -126,19 +126,21 @@ var w = window,
                var channels= [];
               var X=0;
               var max;
+               var m;
+               var i;
 
-  for(var m; m=0; m<10; m++){
+  for( m=0; m<10; m++){
 
   
-       for(var i; i=0; i<24; i++){
-       X+=i;
+       for( i=0; i<24; i++){
+       X=X+i;
        if(i==0){
         max=this.pulse[X];
-            }
+            };
           if(max<this.pulse[X]){
            max=this.pulse[X];
 
-              }
+              };
        };
      channels[m]=max;
 };
