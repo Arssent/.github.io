@@ -119,11 +119,30 @@ var w = window,
             draw: function () {
                 //var pulse = Math.exp(this.pulse) || 1;
                var pull = this.pulse;
-              var lenn =pull.lenght;
-          
-               console.log('* '+lenn);
+      
                console.log('! '+pull);
                console.log('I '+this.pulse[255]);
+               
+               var channels= [];
+var X=0;
+var max;
+
+  for(var m; m=0; m<10; m++){
+
+  
+       for(var i; i=0; i<24; i++){
+       X+=i;
+       if(i==0){
+        max=this.pulse[X];
+            }
+          if(max<this.pulse[X]){
+           max=this.pulse[X];
+
+              }
+       }
+     channels[m]=max;
+}
+               console.log(channels)
                //alert(0);
                 var X=0.13;
                 var Y=0.2;
