@@ -130,19 +130,18 @@ var w = window,
                var i;
 
   for( m=0; m<10; m++){
-
   
        for( i=0; i<24; i++){
-       X=X+i;
+       X=++;
        if(i==0){
         max=this.pulse[X];
             };
           if(max<this.pulse[X]){
            max=this.pulse[X];
-
               };
        };
      channels[m]=max;
+     X++;
 };
                console.log(channels)
                //alert(0);
