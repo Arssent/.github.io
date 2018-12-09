@@ -80,8 +80,8 @@ if (AudioContext) {
             this.audio.controls = true;
            var test=this.audio;
               this.audio.addEventListener('timeupdate', function(){
-    if(!isNaN(test.currentTime)) {
-        _that.audio.playbackRate = 0.6;
+    if(!isNaN(_that.audio.currentTime)) {
+        _that.audio.playbackRate = 0.3;
         console.log('go!&');
     }
 });
