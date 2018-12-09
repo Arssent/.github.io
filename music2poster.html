@@ -131,8 +131,6 @@ var w = window,
 
   for(m=0; m<9; m++){
   
-     
-     
        for(i=0; i<24; i++){
       // X=++
        if(i==0){
@@ -140,14 +138,14 @@ var w = window,
             };
           
           if(max<this.pulse[X]){
-           max=this.pulse[X]/256;
+           max=this.pulse[X] / 256;
               };
        };
      
      channels[m]=max;
      X++
 };
-               console.log(channels)
+               console.log("go"+channels)
                //alert(0);
                 var X=0.13;
                 var Y=0.2;
