@@ -138,7 +138,9 @@ var w = window,
             };
           
           if(max<this.pulse[X]){
-           max=Math.exp((this.pulse[X]) / 456) || 1;
+             max=this.pulse[X];
+             max =max / 256;
+          // max=Math.exp((this.pulse[X]) / 456) || 1;
               };
        };
      
