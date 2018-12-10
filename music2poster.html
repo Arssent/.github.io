@@ -135,6 +135,7 @@ var w = window,
       // X=++
        if(i==0){
         max=this.pulse[X];
+        max =max / 256;
             };
           
           if(max<this.pulse[X]){
@@ -147,7 +148,7 @@ var w = window,
      channels[m]=max;
      X++
 };
-               console.log("! "+channels)
+               console.log(", "+channels)
                
                //alert(0);
                 var X=0.13;
