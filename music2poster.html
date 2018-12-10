@@ -135,12 +135,16 @@ var w = window,
       // X=++
        if(i==0){
         max=this.pulse[X];
-      //  max =max / 256;
+        max =max / 256;
+        max=Math.exp(max) || 1;
+          
             };
           
           if(max<this.pulse[X]){
+             console.log('ll');
              max=this.pulse[X];
              max =max / 256;
+             max=Math.exp(max) || 1;
           // max=Math.exp((this.pulse[X]) / 456) || 1;
               };
        };
