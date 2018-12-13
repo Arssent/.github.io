@@ -153,30 +153,30 @@ var w = window,
                var ch8;
                var ch9;
                
-               var X1;
-               var Y1;
-               var Z1;
-               var X2;
-               var Y2;
-               var Z2;
-               var X3;
-               var Y3;
-               var Z3; 
-               var X4;
-               var Y4;
-               var Z4; 
-               var X5;
-               var Y5;
-               var Z5;
-               var X6;
-               var Y6;
-               var Z6; 
-               var X7;
-               var Y7;
-               var Z7; 
-               var X8;
-               var Y8;
-               var Z8;               
+               var X1=0.121;
+               var Y1=0.1;
+               var Z1=0.1;
+               var X2=0.121;
+               var Y2=0.1;
+               var Z2=0.1;
+               var X3=0.121;
+               var Y3=0.1;
+               var Z3=0.1; 
+               var X4=0.121;
+               var Y4=0.1;
+               var Z4=0.1; 
+               var X5=0.121;
+               var Y5=0.1;
+               var Z5=0.1;
+               var X6=0.121;
+               var Y6=0.1;
+               var Z6=0.1; 
+               var X7=0.121;
+               var Y7=0.1;
+               var Z7=0.1; 
+               var X8=0.121;
+               var Y8=0.1;
+               var Z8=0.1;               
                    
                 
              
@@ -205,10 +205,10 @@ var w = window,
      X+=10;
 };
   
-              
+              /*             
   X1=this.Text1.getAttribute('scale');
   console.log(X1);
-               /* 
+   
   Y1=this.Text1.getAttribute('scale').y;
   Z1=this.Text1.getAttribute('scale').z;
   X2=this.Text2.getAttribute('scale').x;
@@ -236,7 +236,7 @@ var w = window,
 
 if(channels[0]>channels[1] && channels[0]>channels[1] && channels[0]>channels[2] && channels[0]>channels[3] && channels[0]>channels[4] && channels[0]>channels[5] && channels[0]>channels[7] && channels[0]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
-/* 
+
 X1=X1*ch1; Y1=Y1*ch1; Z1=Z1*ch1;
 X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
 X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
@@ -245,7 +245,7 @@ X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;
 X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
 X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
 X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
-
+/* 
 this.Text1.setAttribute('scale', {x: X1, y: Y1, z: Z1});
 this.Text2.setAttribute('scale', {x: X2, y: Y2, z: Z2});
 this.Text3.setAttribute('scale', {x: X3, y: Y3, z: Z3});
