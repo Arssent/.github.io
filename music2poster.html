@@ -116,24 +116,24 @@ var w = window,
                // var Y=0.2;
                 //var Z=0.132;
                 this.band = Math.floor(that.random(128));
-                this.BoXx=document.querySelector('#test3');
-               this.Likvid=document.querySelector('#test1');
+                //this.BoXx=document.querySelector('#test3');
+              // this.Likvid=document.querySelector('#test1');
                 
-               this.Text1=document.querySelector('#tesst1');
-               this.Text2=document.querySelector('#tesst2');
-               this.Text3=document.querySelector('#tesst3');
-               this.Text4=document.querySelector('#tesst4');
-               this.Text5=document.querySelector('#tesst5');
-               this.Text6=document.querySelector('#tesst6');
-               this.Text7=document.querySelector('#tesst7');
-               this.Text8=document.querySelector('#tesst8');
+               this.Text1=document.querySelector('#test1');
+               this.Text2=document.querySelector('#test2');
+               this.Text3=document.querySelector('#test3');
+               this.Text4=document.querySelector('#test4');
+               this.Text5=document.querySelector('#test5');
+               this.Text6=document.querySelector('#test6');
+               this.Text7=document.querySelector('#test7');
+               this.Text8=document.querySelector('#test8');
               
                 
             },
             draw: function () {
                 var pulse = Math.exp(this.pulse) || 1;
               // var pull = this.pulse;
-      alert(this.Text1);
+      
               // console.log('! '+pull);
              //  console.log('I '+this.pulse[255]);
                 
@@ -246,7 +246,7 @@ X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
 X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
 X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
 console.log(X1+' '+X2+' '+X3+' '+X4+' '+X5+' '+X6+' '+X7+' '+X8+' ');
-this.Text1.setAttribute('scale', {x: 10, y: 10, z: 10});
+this.Text1.setAttribute('scale', {x: 1, y: 1, z: 1});
 this.Text2.setAttribute('scale', {x: X2, y: Y2, z: Z2});
 this.Text3.setAttribute('scale', {x: X3, y: Y3, z: Z3});
 this.Text4.setAttribute('scale', {x: X4, y: Y4, z: Z4});
@@ -255,6 +255,7 @@ this.Text6.setAttribute('scale', {x: X6, y: Y6, z: Z6});
 this.Text7.setAttribute('scale', {x: X7, y: Y7, z: Z7});
 this.Text8.setAttribute('scale', {x: X8, y: Y8, z: Z8});
 console.log('go');
+   alert(this.Text1);
 }else if(channels[1]>channels[0] && channels[1]>channels[2] && channels[1]>channels[3] && channels[1]>channels[4] && channels[1]>channels[5] && channels[1]>channels[6] && channels[1]>channels[7] && channels[1]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
 
@@ -561,21 +562,21 @@ w.onload = function () {
   
 
  
-  <a-entity id="tesst1" scale="0.121 0.1 0.1" obj-model="obj: #tesst1; " position="-0.5 0.7 -0.74" material="color:red"></a-entity>
+  <a-entity id="test1" scale="0.121 0.1 0.1" obj-model="obj: #tesst1; " position="-0.5 0.7 -0.74" material="color:red"></a-entity>
    
-    <a-entity id="tesst2" scale="0.121 0.1 0.1" obj-model="obj: #tesst2; " position="-0.5 0.7 -0.68" material="color:red"></a-entity>
+    <a-entity id="test2" scale="0.121 0.1 0.1" obj-model="obj: #tesst2; " position="-0.5 0.7 -0.68" material="color:red"></a-entity>
   
-      <a-entity id="tesst3" scale="0.121 0.1 0.1" obj-model="obj: #tesst3; " position="-0.5 0.7 -0.66" material="color:red"></a-entity>
+      <a-entity id="test3" scale="0.121 0.1 0.1" obj-model="obj: #tesst3; " position="-0.5 0.7 -0.66" material="color:red"></a-entity>
   
-       <a-entity id="tesst4" scale="0.121 0.1 0.1" obj-model="obj: #tesst4; " position="-0.5 0.7 -0.61" material="color:red"></a-entity>
+       <a-entity id="test4" scale="0.121 0.1 0.1" obj-model="obj: #tesst4; " position="-0.5 0.7 -0.61" material="color:red"></a-entity>
   
-         <a-entity id="tesst5" scale="0.121 0.1 0.1" obj-model="obj: #tesst5; " position="-0.5 0.7 -0.55" material="color:red"></a-entity>
+         <a-entity id="test5" scale="0.121 0.1 0.1" obj-model="obj: #tesst5; " position="-0.5 0.7 -0.55" material="color:red"></a-entity>
     
-         <a-entity id="tesst6" scale="0.121 0.1 0.1" obj-model="obj: #tesst6; " position="-0.45 0.7 -0.50" material="color:red"></a-entity>
+         <a-entity id="test6" scale="0.121 0.1 0.1" obj-model="obj: #tesst6; " position="-0.45 0.7 -0.50" material="color:red"></a-entity>
   
-           <a-entity id="tesst7" scale="0.121 0.1 0.1" obj-model="obj: #tesst7; " position="-0.52 0.7 -0.43" material="color:red"></a-entity>
+           <a-entity id="test7" scale="0.121 0.1 0.1" obj-model="obj: #tesst7; " position="-0.52 0.7 -0.43" material="color:red"></a-entity>
   
-             <a-entity id="tesst8" scale="0.121 0.1 0.1" obj-model="obj: #tesst8; " position="-0.40 0.7 -0.42" material="color:red"></a-entity>
+             <a-entity id="test8" scale="0.121 0.1 0.1" obj-model="obj: #tesst8; " position="-0.40 0.7 -0.42" material="color:red"></a-entity>
  
  <a-image id="test" src="#poster"  position="0 0.7 0" width="1" height="1.5" rotation='-90 0 0' material="color:black"></a-image>
    
