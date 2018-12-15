@@ -541,23 +541,13 @@ w.onload = function () {
 <script>
 	AFRAME.registerComponent('markerhandler', {
     init: function() {
-	    var texT1 =document.querySelector('#test1');
-            var texT2 =document.querySelector('#test2');
-            var texT3 =document.querySelector('#test3');
-            var texT4 =document.querySelector('#test4');
-            var texT5 =document.querySelector('#test5');
-            var texT6 =document.querySelector('#test6');
-            var texT7 =document.querySelector('#test7');
-            var texT8 =document.querySelector('#test8');
-
-  
+	  
         const animatedMarker = document.querySelector("#animated-marker");
-        animatedMarker.addEventListener('click', function(ev){ var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z;  
+        animatedMarker.addEventListener('click', function(ev){ var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; 
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
             }
         });
-	    animatedMarker.addEventListener('mousedown', function(ev){var Y=0.97; var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; 
-								    
+	    animatedMarker.addEventListener('mousedown', function(ev){var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; 
   
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
 		    
@@ -612,10 +602,7 @@ w.onload = function () {
   
 <!--  <a-entity  id="posteR" src="#poster" position="0 0.5 0"  geometry="primitive: plane; height: 1.5; width: 1" rotation='-90 0 0'  material="color:black;  side: double;" ></a-entity>-->
   
-  
- 
-  <a-marker-camera  markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'></a-marker-camera>
-  
+ <a-marker-camera markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'></a-marker-camera>>
 </a-scene>
      </div>
          <div id="target"></div>
