@@ -8,7 +8,7 @@
 </head>
   <body style='margin : 0px; overflow: hidden;'>
 <script>
-   alert('ahh10');
+   alert('ahh11');
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -556,39 +556,7 @@ w.onload = function () {
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
             }
         });
-	    animatedMarker.addEventListener('mousedown', function(ev){ var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; texT1.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-}); texT2.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-}); texT3.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-}); texT4.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-}); texT5.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-}); texT6.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-}); texT7.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-}); texT8.setAttribute('animation', {
-  property: 'box',
-  dur: 1000,
-  to:  X+'0.97'+Z;
-});
+	    animatedMarker.addEventListener('mousedown', function(ev){ var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; texT1.setAttribute('animation', {property: 'box', dur: 1000, to:  X+'0.97'+Z; }); texT2.setAttribute('animation', {property: 'box',dur: 1000, to:  X+'0.97'+Z;}); texT3.setAttribute('animation', {property: 'box',dur: 1000,to:  X+'0.97'+Z; }); 
   
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
 		    
