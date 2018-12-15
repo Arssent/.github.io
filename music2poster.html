@@ -7,8 +7,22 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 </head>
   <body style='margin : 0px; overflow: hidden;'>
+ <script>
+AFRAME.registerComponent('markerhandler', {
+    init: function() {
+	    
+        var animatedMarker = document.querySelector("#animated-marker");
+
+	    animatedMarker.addEventListener('mousedown', function(ev){var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; 
+  
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
+		    
+            }
+        });
+}});
+</script>
 <script>
-   alert('ahh31');
+   alert('ahh32');
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -537,20 +551,7 @@ w.onload = function () {
     analyser.init(d.querySelector('#target'));
 };
 </script>
-	 <script>
-AFRAME.registerComponent('markerhandler', {
-    init: function() {
-	    
-        var animatedMarker = document.querySelector("#animated-marker");
-
-	    animatedMarker.addEventListener('mousedown', function(ev){var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; svet.setAttribute('position', {x: X, y: 0.97, z: Z});
-  
-            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
-		    
-            }
-        });
-}});
-</script>
+	
     
 <div class="poster">
 <a-scene embedded arjs='sourceType: webcam;'>
