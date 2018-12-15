@@ -8,7 +8,7 @@
 </head>
   <body style='margin : 0px; overflow: hidden;'>
 <script>
-   alert('ahh11');
+   alert('ahh12');
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -556,7 +556,11 @@ w.onload = function () {
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
             }
         });
-	    animatedMarker.addEventListener('mousedown', function(ev){ var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; texT1.setAttribute('animation', {property: 'box', dur: 1000, to:  X+'0.97'+Z; }); texT2.setAttribute('animation', {property: 'box',dur: 1000, to:  X+'0.97'+Z;}); texT3.setAttribute('animation', {property: 'box',dur: 1000,to:  X+'0.97'+Z; }); 
+	    animatedMarker.addEventListener('mousedown', function(ev){var Y=0.97; var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; 
+								      texT1.setAttribute('animation', {
+									      property: 'position',
+									      dur: 1000,
+									      to:  X+Y+Z });   
   
             if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
 		    
