@@ -9,14 +9,18 @@
   <body style='margin : 0px; overflow: hidden;'>
  <script>
 AFRAME.registerComponent('markerhandler', {
-    init: function() {
-	    
-        var animatedMarker = document.querySelector("#animated-marker");
 
-	    animatedMarker.addEventListener('mousedown', function(ev){var X =ev.detail.intersection.point.x; var Z =ev.detail.intersection.point.z; 
-  
-            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) { 
-		    
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+
+        animatedMarker.addEventListener('click', function(ev){
+            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
+                const entity = document.querySelector('#animated-model');
+                const scale = entity.getAttribute('scale');
+                Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+                
+                // every click, we make our model grow in size
+                entity.setAttribute('scale', scale);
             }
         });
 }});
@@ -604,7 +608,7 @@ w.onload = function () {
 </a-scene>
      </div>
          <div id="target"></div>
-       <input type="file" id="song"/>
+      <!-- <input type="file" id="song"/>-->
 
    </body>
 </html>
