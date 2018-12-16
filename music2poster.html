@@ -7,26 +7,9 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 </head>
   <body style='margin : 0px; overflow: hidden;'>
- <script>
-AFRAME.registerComponent('markerhandler', {
 
-    init: function() {
-        const animatedMarker = document.querySelector("#animated-marker");
-
-        animatedMarker.addEventListener('click', function(ev){
-            if (animatedMarker.object3D.visible == true && ev.detail.cursorEl) {
-                const entity = document.querySelector('#animated-model');
-                const scale = entity.getAttribute('scale');
-                Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
-                
-                // every click, we make our model grow in size
-                entity.setAttribute('scale', scale);
-            }
-        });
-}});
-</script>
-<!--<script>
-   alert('ahh33');
+<script>
+   //alert('ahh33');
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -554,7 +537,7 @@ w.onload = function () {
     var analyser = new WoolAnalaser ();
     analyser.init(d.querySelector('#target'));
 };
-</script>-->
+</script>
 	
     
 <div class="poster">
@@ -581,7 +564,7 @@ w.onload = function () {
 <!--<a-entity id="test3" scale="0.13 0.11 0.132" obj-model="obj: #MainModel; " position="-0.360 0.7 -0.86" material="color:white"></a-entity>-->
   
 
-<a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset='hiro'>
+<a-marker  preset='hiro'>
  
   <a-entity id="test1" scale="0.121 0.1 0.1" obj-model="obj: #tesst1; " position="-0.5 0.7 -0.74" material="color:red"></a-entity>
    
