@@ -9,7 +9,7 @@
   <body style='margin : 0px; overflow: hidden;'>
 
 <script>
-   alert('ahh45');
+   alert('ahh46');
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -263,127 +263,10 @@ var w = window,
   Z8=this.Text8.getAttribute('scale').z;  
              */
 		    
-		    
 	
-if(channels[0]>channels[1] && channels[0]>channels[2] && channels[0]>channels[3] && channels[0]>channels[4]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4];
-
-X1=X1*ch1; Y1=Y1*ch1; Z1=Z1*ch1;
-X2=X2 / ch2; X2=X2 / 1; Y2=Y2 / ch2; Y2=Y2 / 1; Z2=Z2 / ch2; Z2=Z2 / 1;   
-X3=X3 / ch3; X3=X3 / 1; Y3=Y3 / ch3;  Y3=Y3 / 1;  Z3=Z3 / ch3; Z3=Z3 / 1;
-X4=X4 / ch4; X4=X4 / 1; Y4=Y4 / ch4; Y4=Y4 / 1; Z4=Z4 / ch4;  Z4=Z4 / 1;  
-X5=X5 / ch5; X5=X5 / 1; Y5=Y5 / ch5; Y5=Y5 / 1; Z5=Z5 / ch5;  Z5=Z5 / 1; 
-
-    
-//console.log(X1+' '+X2+' '+X3+' '+X4+' '+X5+' '+X6+' '+X7+' '+X8+' ');
-this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
-this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
-this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
-this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
-this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
-
-//console.log('go');
-   //alert(this.Text1);
-} else if(channels[1]>channels[0] && channels[1]>channels[2] && channels[1]>channels[3] && channels[1]>channels[4]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; 
-X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
-X2=X2*ch2; Y2=Y2*ch2; Z2=Z2*ch2;     
-X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
-X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
-X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
-
-   
-this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
-this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
-this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
-this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
-this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
-this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
-this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
-this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
-  
-} else if(channels[2]>channels[0] && channels[2]>channels[1] && channels[2]>channels[3] && channels[2]>channels[4]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; 
- 
-X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
-X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
-X3=X3*ch3; Y3=Y3*ch3; Z3=Z3*ch3;
-X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
-X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
-
-   
-this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
-this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
-this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
-this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
-this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
-this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
-this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
-this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
-  
-} else if(channels[3]>channels[0] && channels[3]>channels[1]  && channels[3]>channels[2] && channels[3]>channels[4]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4];
-  
-X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
-X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
-X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
-X4=X4*ch4; Y4=Y4*ch4; Z4=Z4*ch4;   
-X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
-
-   
-this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
-this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
-this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
-this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
-this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
-this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
-this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
-this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
-   
-} else if(channels[4]>channels[0] && channels[4]>channels[1] && channels[4]>channels[2] && channels[4]>channels[3]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; 
-    
-X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
-X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
-X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
-X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
-X5=X5*ch5; Y5=Y5*ch5; Z5=Z5*ch5;  
-
-   
-this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
-this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
-this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
-this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
-this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
-this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
-this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
-this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
-   
-}/*else if(channels[5]>channels[0] && channels[5]>channels[1]  && channels[5]>channels[2] && channels[5]>channels[3] && channels[5]>channels[4]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4];
-   
-X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
-X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
-X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
-X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
-X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
-X6=X6*ch6; Y6=Y6*ch6; Z6=Z6*ch6;
-X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
-X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
-this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
-this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
-this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
-this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
-this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
-this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
-this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
-this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
-   
-}	    
-	*/	    
 		 
 
-/*if(channels[0]>channels[1] && channels[0]>channels[1] && channels[0]>channels[2] && channels[0]>channels[3] && channels[0]>channels[4] && channels[0]>channels[5] && channels[0]>channels[7] && channels[0]>channels[8]){
+if(channels[0]>channels[1] && channels[0]>channels[1] && channels[0]>channels[2] && channels[0]>channels[3] && channels[0]>channels[4] && channels[0]>channels[5] && channels[0]>channels[7] && channels[0]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
 
 X1=X1*ch1; Y1=Y1*ch1; Z1=Z1*ch1;
@@ -509,7 +392,7 @@ this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
 this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
 this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
 this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
-   */
+
 } /* else if(channels[6]>channels[0] && channels[6]>channels[1]  && channels[6]>channels[2] && channels[6]>channels[3] && channels[6]>channels[4] && channels[6]>channels[5] &&  channels[6]>channels[7] && channels[6]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
    
