@@ -200,7 +200,7 @@ var w = window,
              max=this.pulse[g];
              max =max / 256;
 	     //max =max * 0.1;
-	     max= max-1;
+	     //max= max-1;
 	     max =max / 1000; 
 	
              max=Math.exp(max) || 1;
@@ -256,7 +256,7 @@ X6=X6 / ch6; X6=X6 / 1; Y6=Y6 / ch6; Y6=Y6 / 1; Z6=Z6 / ch6;  Z6=Z6 / 1;
 X7=X7 / ch7; X7=X7 / 1; Y7=Y7 / ch7; Y7=Y7 / 1; Z7=Z7 / ch7;  Z7=Z7 / 1;
 X8=X8 / ch8; X8=X8 / 1; Y8=Y8 / ch8; Y8=Y8 / 1; Z8=Z8 / ch8;  Z8=Z8 / 1;
     
-//console.log(X1+' '+X2+' '+X3+' '+X4+' '+X5+' '+X6+' '+X7+' '+X8+' ');
+console.log(X1+' '+X2+' '+X3+' '+X4+' '+X5+' '+X6+' '+X7+' '+X8+' ');
 this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
 this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
 this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
