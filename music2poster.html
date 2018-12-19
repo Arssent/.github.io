@@ -9,7 +9,7 @@
   <body style='margin : 0px; overflow: hidden;'>
 
 <script>
-   alert('ahh41');
+   alert('ahh42');
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -182,7 +182,7 @@ var w = window,
                    
                 
              
-
+ /* 
   for(m=0; m<9; m++){
   
        for(i=0; i<24; i++){
@@ -208,7 +208,32 @@ var w = window,
      channels[m]=max;
      X+=10;
 };
+*/
+    for(m=0; m<5; m++){
   
+       for(i=0; i<50; i++){
+          g=X+i;
+      // X=++
+       if(i==0){
+        max=this.pulse[g];
+        max =max / 256;
+        max=Math.exp(max) || 1;
+          
+            };
+          
+          if(max<this.pulse[g]){
+             max=this.pulse[g];
+             max =max / 256;
+	     //max =max * 0.1;
+	     max= max-1;
+             max=Math.exp(max) || 1;
+          // max=Math.exp((this.pulse[X]) / 456) || 1;
+              };
+       };
+     
+     channels[m]=max;
+     X+=10;
+};
               /*             
   X1=this.Text1.getAttribute('scale');
   console.log(X1);
