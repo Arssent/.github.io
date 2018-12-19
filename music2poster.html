@@ -245,17 +245,16 @@ var w = window,
 	
 		 
 
-if(channels[0]>channels[1] && channels[0]>channels[1] && channels[0]>channels[2] && channels[0]>channels[3] && channels[0]>channels[4]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4];  ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
-
+if(channels[0]>channels[1] && channels[0]>channels[1] && channels[0]>channels[2] && channels[0]>channels[3] && channels[0]>channels[4] && channels[0]>channels[5] && channels[0]>channels[7] && channels[0]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
 X1=X1*ch1; Y1=Y1*ch1; Z1=Z1*ch1;
-X2=X2 + ch2;  Y2=Y2 + ch2; Z2=Z2 + ch2;   
-X3=X3 + ch3;  Y3=Y3 + ch3;  Z3=Z3 + ch3; 
-X4=X4 + ch4;  Y4=Y4 + ch4;  Z4=Z4 + ch4;   
-X5=X5 + ch5;  Y5=Y5 + ch5;  Z5=Z5 + ch5;  
-X6=X6 / ch6; X6=X6 / 1; Y6=Y6 / ch6; Y6=Y6 / 1; Z6=Z6 / ch6;  
-X7=X7 / ch7; X7=X7 / 1; Y7=Y7 / ch7; Y7=Y7 / 1; Z7=Z7 / ch7;  
-X8=X8 / ch8; X8=X8 / 1; Y8=Y8 / ch8; Y8=Y8 / 1; Z8=Z8 / ch8;  
+X2=X2 / ch2; X2=X2 / 1; Y2=Y2 / ch2; Y2=Y2 / 1; Z2=Z2 / ch2; Z2=Z2 / 1;   
+X3=X3 / ch3; X3=X3 / 1; Y3=Y3 / ch3;  Y3=Y3 / 1;  Z3=Z3 / ch3; Z3=Z3 / 1;
+X4=X4 / ch4; X4=X4 / 1; Y4=Y4 / ch4; Y4=Y4 / 1; Z4=Z4 / ch4;  Z4=Z4 / 1;  
+X5=X5 / ch5; X5=X5 / 1; Y5=Y5 / ch5; Y5=Y5 / 1; Z5=Z5 / ch5;  Z5=Z5 / 1; 
+X6=X6 / ch6; X6=X6 / 1; Y6=Y6 / ch6; Y6=Y6 / 1; Z6=Z6 / ch6;  Z6=Z6 / 1;
+X7=X7 / ch7; X7=X7 / 1; Y7=Y7 / ch7; Y7=Y7 / 1; Z7=Z7 / ch7;  Z7=Z7 / 1;
+X8=X8 / ch8; X8=X8 / 1; Y8=Y8 / ch8; Y8=Y8 / 1; Z8=Z8 / ch8;  Z8=Z8 / 1;
     
 //console.log(X1+' '+X2+' '+X3+' '+X4+' '+X5+' '+X6+' '+X7+' '+X8+' ');
 this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
@@ -268,17 +267,16 @@ this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
 ///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
 //console.log('go');
    //alert(this.Text1);
-}else if(channels[1]>channels[0] && channels[1]>channels[2] && channels[1]>channels[3] && channels[1]>channels[4]){
-ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4];  ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
-
-X1=X1 + ch1;  Y1=Y1 + ch1; Y1=Y1 + 1; Z1=Z1 + ch1; 
-X2=X2*ch2; Y2=Y2*ch2; Z2=Z2*ch2;   
-X3=X3 + ch3;  Y3=Y3 + ch3;  Z3=Z3 + ch3; 
-X4=X4 + ch4;  Y4=Y4 + ch4; Z4=Z4 + ch4;   
-X5=X5 + ch5;  Y5=Y5 + ch5;  Z5=Z5 + ch5;   
-X6=X6 + ch6;  Y6=Y6 + ch6;  Z6=Z6 + ch6;  
-X7=X7 + ch7;  Y7=Y7 + ch7;  Z7=Z7 + ch7;  
-X8=X8 + ch8;  Y8=Y8 + ch8;  Z8=Z8 + ch8;  
+}else if(channels[1]>channels[0] && channels[1]>channels[2] && channels[1]>channels[3] && channels[1]>channels[4] && channels[1]>channels[5] && channels[1]>channels[6] && channels[1]>channels[7] && channels[1]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2*ch2; Y2=Y2*ch2; Z2=Z2*ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
    
 this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
 this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
@@ -289,17 +287,17 @@ this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
 //this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
 ///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
   
-} else if(channels[2]>channels[0] && channels[2]>channels[1] && channels[2]>channels[3] && channels[2]>channels[4]){
+} else if(channels[2]>channels[0] && channels[2]>channels[1] && channels[2]>channels[3] && channels[2]>channels[4] && channels[2]>channels[5] && channels[2]>channels[6] && channels[2]>channels[7] && channels[2]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
  
-X1=X1 + ch1; X1=X1;  Y1=Y1 + ch1; Y1=Y1; Z1=Z1 + ch1; Z1=Z1;
-X2=X2 + ch2; X2=X2; Y2=Y2 + ch2; Y2=Y2; Z2=Z2 + ch2; Z2=Z2;    
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
 X3=X3*ch3; Y3=Y3*ch3; Z3=Z3*ch3;
-X4=X4 + ch4; X4=X4; Y4=Y4 + ch4; Y4=Y4; Z4=Z4 + ch4;  Z4=Z4;  
-X5=X5 + ch5; X5=X5; Y5=Y5 + ch5; Y5=Y5; Z5=Z5 + ch5;  Z5=Z5; 
-X6=X6 + ch6; X6=X6; Y6=Y6 + ch6; Y6=Y6; Z6=Z6 + ch6;  Z6=Z6;
-X7=X7 + ch7; X7=X7; Y7=Y7 + ch7; Y7=Y7; Z7=Z7 + ch7;  Z7=Z7; 
-X8=X8 + ch8; X8=X8; Y8=Y8 + ch8; Y8=Y8; Z8=Z8 + ch8;  Z8=Z8;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
    
 this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
 this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
@@ -310,18 +308,17 @@ this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
 //this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
 ///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
   
-} else if(channels[3]>channels[0] && channels[3]>channels[1]  && channels[3]>channels[2] && channels[3]>channels[4]){
+} else if(channels[3]>channels[0] && channels[3]>channels[1]  && channels[3]>channels[2] && channels[3]>channels[4] && channels[3]>channels[5] && channels[3]>channels[6] &&  channels[3]>channels[7] && channels[3]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
   
-
-X1=X1 + ch1; X1=X1;  Y1=Y1 + ch1; Y1=Y1; Z1=Z1 + ch1; Z1=Z1;
-X2=X2 + ch2; X2=X2; Y2=Y2 + ch2; Y2=Y2; Z2=Z2 + ch2; Z2=Z2;      
-X3=X3 + ch3; X3=X3; Y3=Y3 + ch3;  Y3=Y3;  Z3=Z3 + ch3; Z3=Z3;
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
 X4=X4*ch4; Y4=Y4*ch4; Z4=Z4*ch4;   
-X5=X5 + ch5; X5=X5; Y5=Y5 + ch5; Y5=Y5; Z5=Z5 + ch5;  Z5=Z5; 
-X6=X6 / ch6; X6=X6 / 1; Y6=Y6 / ch6; Y6=Y6 / 1; Z6=Z6 / ch6;  Z6=Z6 / 1;
-X7=X7 / ch7; X7=X7 / 1; Y7=Y7 / ch7; Y7=Y7 / 1; Z7=Z7 / ch7;  Z7=Z7 / 1;
-X8=X8 / ch8; X8=X8 / 1; Y8=Y8 / ch8; Y8=Y8 / 1; Z8=Z8 / ch8;  Z8=Z8 / 1;
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8; 
    
 this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
 this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
@@ -332,20 +329,17 @@ this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
 //this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
 ///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
    
-} else if(channels[4]>channels[0] && channels[4]>channels[1] && channels[4]>channels[2] && channels[4]>channels[3] && channels[4]>channels[5]){
+} else if(channels[4]>channels[0] && channels[4]>channels[1] && channels[4]>channels[2] && channels[4]>channels[3] && channels[4]>channels[5] &&channels[4]>channels[6] &&  channels[4]>channels[7] && channels[4]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
     
-
-X1=X1 + ch1; X1=X1;  Y1=Y1 + ch1; Y1=Y1; Z1=Z1 + ch1; Z1=Z1;
-X2=X2 + ch2; X2=X2; Y2=Y2 + ch2; Y2=Y2; Z2=Z2 + ch2; Z2=Z2;      
-X3=X3 + ch3; X3=X3; Y3=Y3 + ch3;  Y3=Y3;  Z3=Z3 + ch3; Z3=Z3;
-X4=X4 + ch4; X4=X4; Y4=Y4 + ch4; Y4=Y4; Z4=Z4 + ch4;  Z4=Z4; 
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
 X5=X5*ch5; Y5=Y5*ch5; Z5=Z5*ch5;  
-X5=X5 + ch5; X5=X5; Y5=Y5 + ch5; Y5=Y5; Z5=Z5 + ch5;  Z5=Z5; 
-X6=X6 / ch6; X6=X6 / 1; Y6=Y6 / ch6; Y6=Y6 / 1; Z6=Z6 / ch6;  Z6=Z6 / 1;
-X7=X7 / ch7; X7=X7 / 1; Y7=Y7 / ch7; Y7=Y7 / 1; Z7=Z7 / ch7;  Z7=Z7 / 1;
-X8=X8 / ch8; X8=X8 / 1; Y8=Y8 / ch8; Y8=Y8 / 1; Z8=Z8 / ch8;  Z8=Z8 / 1;
-   
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8; 
    
 this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
 this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
@@ -356,14 +350,14 @@ this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
 //this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
 ///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
    
-}else if(channels[5]>channels[0] && channels[5]>channels[1]  && channels[5]>channels[2] && channels[5]>channels[3] && channels[5]>channels[4]){
+}else if(channels[5]>channels[0] && channels[5]>channels[1]  && channels[5]>channels[2] && channels[5]>channels[3] && channels[5]>channels[4]  && channels[5]>channels[6] &&  channels[5]>channels[7] && channels[5]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
    
-X1=X1 / ch1; X1=X1 / 1;  Y1=Y1 / ch1; Y1=Y1 / 1; Z1=Z1 / ch1; Z1=Z1 / 1;
-X2=X2 / ch2; X2=X2 / 1; Y2=Y2 / ch2; Y2=Y2 / 1; Z2=Z2 / ch2; Z2=Z2 / 1;      
-X3=X3 / ch3; X3=X3 / 1; Y3=Y3 / ch3;  Y3=Y3 / 1;  Z3=Z3 / ch3; Z3=Z3 / 1;
-X4=X4 / ch4; X4=X4 / 1; Y4=Y4 / ch4; Y4=Y4 / 1; Z4=Z4 / ch4;  Z4=Z4 / 1;   
-X5=X5 / ch5; X5=X5 / 1; Y5=Y5 / ch5; Y5=Y5 / 1; Z5=Z5 / ch5;  Z5=Z5 / 1;  
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
 X6=X6*ch6; Y6=Y6*ch6; Z6=Z6*ch6;
 X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
 X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
@@ -375,8 +369,7 @@ this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
 ///this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
 //this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
 ///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
-
-} /* else if(channels[6]>channels[0] && channels[6]>channels[1]  && channels[6]>channels[2] && channels[6]>channels[3] && channels[6]>channels[4] && channels[6]>channels[5] &&  channels[6]>channels[7] && channels[6]>channels[8]){
+}/* else if(channels[6]>channels[0] && channels[6]>channels[1]  && channels[6]>channels[2] && channels[6]>channels[3] && channels[6]>channels[4] && channels[6]>channels[5] &&  channels[6]>channels[7] && channels[6]>channels[8]){
 ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
    
 X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
