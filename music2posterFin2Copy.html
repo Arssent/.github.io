@@ -1,0 +1,602 @@
+<html>
+   <head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+  
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+</head>
+  <body style='margin : 0px; overflow: hidden;'>
+
+<script>
+   alert('ahh83');
+var w = window,
+    d = document,
+    MP3_PATH = 'A Thousand Thousandths.mp3',
+    MAX_PARTICLES = 50,
+    MAX_BIRDS = 10,
+    TWO_PI = Math.PI * 2,
+    SMOOTHING = 0.3,
+    FURIE = 512,
+    RADIUS = {
+        MAX: 80.0,
+        MIN: 10.0
+    },
+    SIZE = {
+        MIN: 0.5,
+        MAX: 1.25
+    },
+    OPACITY = {
+        MIN: 0.4,
+        MAX: 0.8
+    },
+    SPEED = {
+        MIN: 0.2,
+        MAX: 1
+    },
+    BIRD_SPEED = {
+        MIN: 3.5,
+        MAX: 4.2
+    },
+    BIRD_JUMP = {
+        MIN: 20,
+        MAX: 30
+    },
+    IMAGES = ['img/red.png','img/ell.png','img/blue.png','img/black.png','img/white.png'],
+    COLORS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423']; //цвета частиц
+    var WoolAnalaser = function () {
+	   
+        "use strict";
+        var ctx = null,
+        canva = null,
+        config = null,
+        particles = [],
+        rope = null,
+        birds = [],
+        audio = null,
+         
+        input = d.querySelector('#song'),
+        that = this;
+        config = this.config = {
+            fullscreen: true,
+            interval: 80,
+            type: "canvas"
+        };
+        /*
+        * Конструктор анализатора
+        */
+        var Analyse = function () {
+            var _that = this,
+            AudioContext = w.AudioContext || w.webkitAudioContext;
+            this.audio = new Audio();
+            this.audio.src = MP3_PATH;
+            this.audio.controls = true;
+            this.context = new AudioContext();
+            this.node = this.context.createScriptProcessor(2048, 1, 1);
+            //Анализатор
+            this.analyser = this.context.createAnalyser();
+            this.analyser.smoothingTimeConstant = SMOOTHING;
+            this.analyser.fftSize = FURIE;
+            this.bands = new Uint8Array(this.analyser.frequencyBinCount);
+            console.log(this.bands);
+            this.audio.addEventListener('canplay', function () {
+                if (!_that.source) {
+                    _that.source = _that.context.createMediaElementSource(_that.audio);
+                    _that.source.connect(_that.analyser);
+                    _that.analyser.connect(_that.node);
+                    _that.node.connect(_that.context.destination);
+                    _that.source.connect(_that.context.destination);
+                    _that.node.onaudioprocess = function () {
+                        _that.analyser.getByteFrequencyData(_that.bands);
+                        if (!_that.audio.paused) {
+                            return typeof _that.update === "function" ? _that.update(_that.bands) : 0;
+                        }
+                    };
+                }
+            });
+            return this;
+        };
+        /*
+        * Кконструктор частиц
+        */
+        
+         
+        /*
+        * Веревка
+        */
+        
+        /*
+        * Птички
+        */
+        var Bird = function () {
+            this.init();
+        };
+        Bird.prototype = {
+            init: function () {
+               
+              //  var X=0.13;
+               // var Y=0.2;
+                //var Z=0.132;
+                this.band = Math.floor(that.random(128));
+                //this.BoXx=document.querySelector('#test3');
+              // this.Likvid=document.querySelector('#test1');
+                
+               this.Text1=document.querySelector('#test1');
+               this.Text2=document.querySelector('#test2');
+               this.Text3=document.querySelector('#test3');
+               this.Text4=document.querySelector('#test4');
+               this.Text5=document.querySelector('#test5');
+             this.Text6=document.querySelector('#test6');
+             this.Text7=document.querySelector('#test7');
+               this.Text8=document.querySelector('#test8');
+              
+                
+            },
+            draw: function () {
+                var pulse = Math.exp(this.pulse) || 1;
+              // var pull = this.pulse;
+      
+               //console.log('! '+pull);
+              //console.log('I '+this.pulse[255]);
+                
+               var channels= [];
+              var X=0;
+              var max;
+               var m;
+               var i;
+               var g;
+               var ch1;
+               var ch2;
+               var ch3;
+               var ch4;
+               var ch5;
+               var ch6;
+               var ch7;
+               var ch8;
+               var ch9;
+               
+               var X1=0.037;
+               var Y1=0.02;
+               var Z1=0.04;    
+               var X2=0.04;
+               var Y2=0.04;
+               var Z2=0.04;
+               var X3=0.04;
+               var Y3=0.04;
+               var Z3=0.04; 
+               var X4=0.04;
+               var Y4=0.04;
+               var Z4=0.04; 
+               var X5=0.04;
+               var Y5=0.04;
+               var Z5=0.04;
+               var X6=0.121;
+               var Y6=0.1;
+               var Z6=0.1; 
+               var X7=0.121;
+               var Y7=0.1;
+               var Z7=0.1; 
+               var X8=0.121;
+               var Y8=0.1;
+               var Z8=0.1;               
+                   
+                
+             
+            
+             
+  for(m=0; m<9; m++){
+  
+       for(i=0; i<24; i++){
+          g=X+i;
+      // X=++
+       if(i==0){
+        max=this.pulse[g];
+        //max =max / 256;
+	  max =max / 512
+	 
+        max=Math.exp(max) || 1;
+          
+            };
+          
+          if(max<this.pulse[g]){
+             max=this.pulse[g];
+             max =max / 256;
+	    // max =max * 0.1;
+             max=Math.exp(max) || 1;
+          // max=Math.exp((this.pulse[X]) / 456) || 1;
+              };
+       };
+    // max= max-1;
+   // max =max / 5;
+     channels[m]=max;
+     X+=10;
+};
+    
+              /*             
+  X1=this.Text1.getAttribute('scale');
+  console.log(X1);
+   
+  Y1=this.Text1.getAttribute('scale').y;
+  Z1=this.Text1.getAttribute('scale').z;
+  X2=this.Text2.getAttribute('scale').x;
+  Y2=this.Text2.getAttribute('scale').y;
+  Z2=this.Text2.getAttribute('scale').z;  
+  X3=this.Text3.getAttribute('scale').x;
+  Y3=this.Text3.getAttribute('scale').y;
+  Z3=this.Text3.getAttribute('scale').z;
+  X4=this.Text4.getAttribute('scale').x;
+  Y4=this.Text4.getAttribute('scale').y;
+  Z4=this.Text4.getAttribute('scale').z;
+  X5=this.Text5.getAttribute('scale').x;
+  Y5=this.Text5.getAttribute('scale').y;
+  Z5=this.Text5.getAttribute('scale').z;
+  X6=this.Text6.getAttribute('scale').x;
+  Y6=this.Text6.getAttribute('scale').y;
+  Z6=this.Text6.getAttribute('scale').z;
+  X7=this.Text7.getAttribute('scale').x;
+  Y7=this.Text7.getAttribute('scale').y;
+  Z7=this.Text7.getAttribute('scale').z;
+  X8=this.Text8.getAttribute('scale').x;
+  Y8=this.Text8.getAttribute('scale').y;
+  Z8=this.Text8.getAttribute('scale').z;  
+             */
+		    
+	
+		 
+if(channels[0]>channels[1] && channels[0]>channels[1] && channels[0]>channels[2] && channels[0]>channels[3] && channels[0]>channels[4] && channels[0]>channels[5] && channels[0]>channels[7] && channels[0]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+X1=X1*ch1; Y1=Y1*ch1; Z1=Z1*ch1;
+X2=X2 * ch2;  Y2=Y2 * ch2;  Z2=Z2 * ch2;    
+X3=X3 / ch3;  Y3=Y3 / ch3;    Z3=Z3 / ch3; 
+X4=X4 / ch4;  Y4=Y4 / ch4;  Z4=Z4 / ch4;    
+X5=X5 / ch5;  Y5=Y5 / ch5;  Z5=Z5 / ch5;  
+X6=X6 / ch6;  Y6=Y6 / ch6;  Z6=Z6 / ch6;  
+X7=X7 / ch7;  Y7=Y7 / ch7;  Z7=Z7 / ch7;  
+X8=X8 / ch8;  Y8=Y8 / ch8;  Z8=Z8 / ch8;  
+    
+console.log(X1+' '+X2+' '+X3+' '+X4+' '+X5+' '+X6+' '+X7+' '+X8+' ');
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.04});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.04});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.04});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.04});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.04});
+///this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+//this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+//console.log('go');
+   //alert(this.Text1);
+}else if(channels[1]>channels[0] && channels[1]>channels[2] && channels[1]>channels[3] && channels[1]>channels[4] && channels[1]>channels[5] && channels[1]>channels[6] && channels[1]>channels[7] && channels[1]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2*ch2; Y2=Y2*ch2; Z2=Z2*ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
+   
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.04});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.04});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.04});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.04});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.04});
+///this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+//this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+  
+} else if(channels[2]>channels[0] && channels[2]>channels[1] && channels[2]>channels[3] && channels[2]>channels[4] && channels[2]>channels[5] && channels[2]>channels[6] && channels[2]>channels[7] && channels[2]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+ 
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3*ch3; Y3=Y3*ch3; Z3=Z3*ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
+   
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.04});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.04});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.04});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.04});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.04});
+///this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+//this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+  
+} else if(channels[3]>channels[0] && channels[3]>channels[1]  && channels[3]>channels[2] && channels[3]>channels[4] && channels[3]>channels[5] && channels[3]>channels[6] &&  channels[3]>channels[7] && channels[3]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+  
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4*ch4; Y4=Y4*ch4; Z4=Z4*ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8; 
+   
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.04});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.04});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.04});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.04});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.04});
+///this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+//this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+   
+} else if(channels[4]>channels[0] && channels[4]>channels[1] && channels[4]>channels[2] && channels[4]>channels[3] && channels[4]>channels[5] &&channels[4]>channels[6] &&  channels[4]>channels[7] && channels[4]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+    
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5*ch5; Y5=Y5*ch5; Z5=Z5*ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8; 
+   
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.04});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.04});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.04});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.04});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.04});
+///this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+//this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+   
+}else if(channels[5]>channels[0] && channels[5]>channels[1]  && channels[5]>channels[2] && channels[5]>channels[3] && channels[5]>channels[4]  && channels[5]>channels[6] &&  channels[5]>channels[7] && channels[5]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+   
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6*ch6; Y6=Y6*ch6; Z6=Z6*ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.04});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.04});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.04});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.04});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.04});
+///this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+//this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+///this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+}/* else if(channels[6]>channels[0] && channels[6]>channels[1]  && channels[6]>channels[2] && channels[6]>channels[3] && channels[6]>channels[4] && channels[6]>channels[5] &&  channels[6]>channels[7] && channels[6]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+   
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7*ch7; Y7=Y7*ch7; Z7=Z7*ch7;
+X8=X8 / ch8; Y8=Y8 / ch8; Z8=Z8 / ch8;
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
+this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+  
+} else if(channels[7]>channels[0] && channels[7]>channels[1]  && channels[7]>channels[2] && channels[7]>channels[3] && channels[7]>channels[4] && channels[7]>channels[5] &&  channels[7]>channels[6] && channels[7]>channels[8]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+   
+X1=X1 / ch1; Y1=Y1 / ch1; Z1=Z1 / ch1;
+X2=X2 / ch2; Y2=Y2 / ch2; Z2=Z2 / ch2;     
+X3=X3 / ch3; Y3=Y3 / ch3; Z3=Z3 / ch3;
+X4=X4 / ch4; Y4=Y4 / ch4; Z4=Z4 / ch4;   
+X5=X5 / ch5; Y5=Y5 / ch5; Z5=Z5 / ch5;  
+X6=X6 / ch6; Y6=Y6 / ch6; Z6=Z6 / ch6;
+X7=X7 / ch7; Y7=Y7 / ch7; Z7=Z7 / ch7;
+X8=X8*ch8; Y8=Y8*ch8; Z8=Z8*ch8;
+this.Text1.setAttribute('scale', {x: X1, y: Y1, z: 0.1});
+this.Text2.setAttribute('scale', {x: X2, y: Y2, z: 0.1});
+this.Text3.setAttribute('scale', {x: X3, y: Y3, z: 0.1});
+this.Text4.setAttribute('scale', {x: X3, y: Y4, z: 0.1});
+this.Text5.setAttribute('scale', {x: X4, y: Y5, z: 0.1});
+this.Text6.setAttribute('scale', {x: X5, y: Y6, z: 0.1});
+this.Text7.setAttribute('scale', {x: X6, y: Y7, z: 0.1});
+this.Text8.setAttribute('scale', {x: X7, y: Y8, z: 0.1});
+  
+} else if(channels[8]>channels[0] && channels[8]>channels[1]  && channels[8]>channels[2] && channels[8]>channels[3] && channels[8]>channels[4] && channels[8]>channels[5] &&  channels[8]>channels[6] && channels[8]>channels[7]){
+ch1=channels[0];  ch2=channels[1]; ch3=channels[2]; ch4=channels[3]; ch5=channels[4]; ch6=channels[5]; ch7=channels[6]; ch8=channels[7]; ch9=channels[8];
+}*/ 
+               
+              // console.log("!! "+channels);
+              console.log("& "+ch1+"& "+ch2+"& "+ch3+"& "+ch4+"& "+ch5+"& "+ch6+"& "+ch7+"& "+ch8+"& "+ch9);
+                
+               //alert(0);
+                //X=X * pulse;
+             //   Y=Y * pulse *2;
+               /// Z=Z * pulse;
+                //alert(Y);
+            /*  
+               
+              var lik1X =0.121;
+              var lik1Y =0.1;
+              var lik1Z =0.1;
+             //lik1X=lik1X * pulse;
+             // lik1X=lik1Y * pulse;
+             //lik1Z=lik1Z * pulse;
+                lik1Y=lik1Y * pulse;
+               if(Y<=0.5){
+               Y=0.1;
+                   };
+              ///alert(Y);
+               if(Y>0.7){
+               Y=Y*2;
+                   };
+              /// this.BoXx.setAttribute('scale', {x: X, y: Y, z: Z});
+              /// this.Likvid.setAttribute('scale', {x: lik1X, y: lik1Y, z: lik1Z});
+   */
+                
+            }
+        };
+        /*
+        * Создает конву
+        */
+        this.init = function (contener) {
+            this.createParticles();
+        };
+        /*
+        * Создает частицы
+        */
+        this.createParticles = function () {
+            var particle = null, audio = null;
+            //круги
+            
+            //Птички
+   
+                birds.push(new Bird());
+            try {
+                audio = new Analyse();
+                d.body.appendChild(audio.audio);
+                input.addEventListener('change', function () {
+                    var song = this.value,
+                        fReader = new FileReader();
+                    fReader.readAsDataURL(this.files[0]);
+                    fReader.onloadend = function (event) {
+                        var e = event || w.event;
+                        audio.audio.src = e.target.result;
+                        audio.audio.load();
+                    };
+                }, false);
+                audio.update = function (bands) {
+                    var ln = MAX_PARTICLES,
+                        bLn = MAX_BIRDS;
+                    
+                    
+                        var bird = birds[0];
+                        bird.pulse = bands;
+                        
+                       // bird.pulse = bands[bird.band] / 256;
+                    
+                };
+            } catch (e) {
+                throw ('Ваш барузер не поддержывает audio Api');
+            }
+            setInterval(that.action, this.config.interval);
+        }
+        /*
+        * Добавляет частицы в конву и анимирует их
+        */
+        this.action = function () {
+            var ln = MAX_PARTICLES;
+  
+                var loc = birds[0];
+                loc.draw();
+ 
+        }
+        /*
+        * Чистит конву перед следующей анимацией
+        */
+        this.clear = function () {
+           
+        };
+    };
+WoolAnalaser.prototype = {
+    /*
+    * Создает конву на странице
+    * @param {Object} contener - dom объект элемента для вставки конвы
+    * @return {Object} context - контекст созданной конвы
+    */
+    createCanvas: function (contener) {
+        var config = this.config,
+            canvas = null,
+            context = null;
+        return context;
+    },
+    /*
+    * Выбор рандомного значения
+    */
+    random: function( min, max ) {
+        if (this.isArray( min )) {
+            return min[ ~~( Math.random() * min.length ) ];
+        }
+        if (!this.isNumber(max)) {
+            max = min || 1, min = 0;
+        }
+        return min + Math.random() * ( max - min ); 
+    },
+    /*
+    * Проверка на массив
+    */
+    isArray: function(object) {
+        return Object.prototype.toString.call( object ) == '[object Array]';
+    },
+    isNumber: function(object) {
+        return typeof object == 'number';
+    }
+};
+w.onload = function () {
+    var analyser = new WoolAnalaser ();
+    analyser.init(d.querySelector('#target'));
+	//alert();
+};
+</script>
+	
+    
+<div class="poster">
+<a-scene embedded arjs='sourceType: webcam;'>
+  <a-assets>
+ <a-asset-item id="MainModel" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%20motel2.obj"></a-asset-item>
+  <a-asset-item id="tesst1" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%20motel2.obj"></a-asset-item>
+   <a-asset-item id="tesst2" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B0%2020%2000%20fin.obj"></a-asset-item>
+       <a-asset-item id="tesst3" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B0%2011%20final.obj"></a-asset-item>
+           <a-asset-item id="tesst4" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%BB%D1%8F%20%D0%BF%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B0%2012%20final.obj"></a-asset-item>
+        <a-asset-item id="tesst5" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%20name.obj"></a-asset-item>
+    
+          <a-asset-item id="tesst6" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation6.obj"></a-asset-item>
+           <a-asset-item id="tesst7" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation8.obj"></a-asset-item>
+    
+         <a-asset-item id="tesst8" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2Flikvidation9.obj"></a-asset-item>
+    
+    <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">>
+
+    <img id="poster" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%BF%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%20stirlite%20Model%20final-01.jpg">
+  </a-assets>
+  
+
+<!--<a-entity id="test3" scale="0.13 0.11 0.132" obj-model="obj: #MainModel; " position="-0.360 0.7 -0.86" material="color:white"></a-entity>-->
+  
+
+<a-marker  preset='hiro'>
+ 
+  <a-entity id="test1" scale="0.037 0.02 0.04" obj-model="obj: #tesst1; " position="0.7 0.72 -0.20" material="color:black"></a-entity>
+   
+    <a-entity id="test2" scale="0.04 0.04 0.04" obj-model="obj: #tesst2; " position="-0.6 0.40 -0.6" material="color:black"></a-entity>
+  
+      <a-entity id="test3" scale="0.04 0.04 0.04" obj-model="obj: #tesst3; " position="0.30 0.43 0.15" material="color:black"></a-entity>
+  
+       <a-entity id="test4" scale="0.04 0.04 0.04" obj-model="obj: #tesst4; " position="0.25 0.41 -0.10" material="color:black"></a-entity>
+  
+         <a-entity id="test5" scale="0.04 0.04 0.04" obj-model="obj: #tesst5; " position="0.01 0.72 0.1" material="color:black"></a-entity>
+    
+      <!--<a-entity id="test6" scale="0.121 0.1 0.1" obj-model="obj: #tesst6; " position="-0.45 0.7 -0.50" material="color:black"></a-entity>
+  
+           <a-entity id="test7" scale="0.121 0.1 0.1" obj-model="obj: #tesst7; " position="-0.52 0.7 -0.43" material="color:black"></a-entity>
+  
+             <a-entity id="test8" scale="0.121 0.1 0.1" obj-model="obj: #tesst8; " position="-0.40 0.7 -0.42" material="color:black"></a-entity>-->
+ 
+ <a-image id="test"   position="0 0.3 0" width="1" height="1.5" rotation='-90 0 0' material="color:white"></a-image>
+    </a-marker>
+  
+<!--  <a-entity  id="posteR" src="#poster" position="0 0.5 0"  geometry="primitive: plane; height: 1.5; width: 1" rotation='-90 0 0'  material="color:black;  side: double;" ></a-entity>-->
+  
+ <a-entity camera></a-entity>
+</a-scene>
+     </div>
+         <div id="target"></div>
+     <input type="file" id="song"/>
+
+   </body>
+</html>
