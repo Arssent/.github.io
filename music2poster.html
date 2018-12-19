@@ -9,7 +9,7 @@
   <body style='margin : 0px; overflow: hidden;'>
 
 <script>
-   alert('ahh70');
+   alert('ahh71');
 var w = window,
     d = document,
     MP3_PATH = 'A Thousand Thousandths.mp3',
@@ -201,12 +201,13 @@ var w = window,
              max=this.pulse[g];
              max =max / 256;
 	    // max =max * 0.1;
-	   max =max / 10;
+
              max=Math.exp(max) || 1;
           // max=Math.exp((this.pulse[X]) / 456) || 1;
               };
        };
      max= max-1;
+    max =max / 10;
      channels[m]=max;
      X+=10;
 };
