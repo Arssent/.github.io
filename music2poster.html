@@ -9,7 +9,7 @@
   <body style='margin : 0px; overflow: hidden;'>
 
 <script>
-   alert('ahh35');
+   alert('ahh36');
 var w = window,
     d = document,
     MP3_PATH = 'test3.ogg',
@@ -45,6 +45,7 @@ var w = window,
     IMAGES = ['img/red.png','img/ell.png','img/blue.png','img/black.png','img/white.png'],
     COLORS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423']; //цвета частиц
     var WoolAnalaser = function () {
+	   
         "use strict";
         var ctx = null,
         canva = null,
@@ -125,9 +126,9 @@ var w = window,
                this.Text3=document.querySelector('#test3');
                this.Text4=document.querySelector('#test4');
                this.Text5=document.querySelector('#test5');
-               this.Text6=document.querySelector('#test6');
-               this.Text7=document.querySelector('#test7');
-               this.Text8=document.querySelector('#test8');
+              // this.Text6=document.querySelector('#test6');
+              // this.Text7=document.querySelector('#test7');
+               //this.Text8=document.querySelector('#test8');
               
                 
             },
@@ -537,6 +538,7 @@ WoolAnalaser.prototype = {
 w.onload = function () {
     var analyser = new WoolAnalaser ();
     analyser.init(d.querySelector('#target'));
+	alert();
 };
 </script>
 	
@@ -577,11 +579,11 @@ w.onload = function () {
   
          <a-entity id="test5" scale="0.04 0.04 0.04" obj-model="obj: #tesst5; " position="0.01 0.72 0.1" material="color:black"></a-entity>
     
-       <!--  <a-entity id="test6" scale="0.121 0.1 0.1" obj-model="obj: #tesst6; " position="-0.45 0.7 -0.50" material="color:black"></a-entity>
+      <a-entity id="test6" scale="0.121 0.1 0.1" obj-model="obj: #tesst6; " position="-0.45 0.7 -0.50" material="color:black"></a-entity>
   
            <a-entity id="test7" scale="0.121 0.1 0.1" obj-model="obj: #tesst7; " position="-0.52 0.7 -0.43" material="color:black"></a-entity>
   
-             <a-entity id="test8" scale="0.121 0.1 0.1" obj-model="obj: #tesst8; " position="-0.40 0.7 -0.42" material="color:black"></a-entity>-->
+             <a-entity id="test8" scale="0.121 0.1 0.1" obj-model="obj: #tesst8; " position="-0.40 0.7 -0.42" material="color:black"></a-entity>
  
  <a-image id="test"   position="0 0.7 0" width="1" height="1.5" rotation='-90 0 0' material="color:white"></a-image>
     </a-marker>
