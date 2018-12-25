@@ -6,16 +6,25 @@
   
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <style>   
-      .aframebox {
+.knopka {
+  position: relative; /* Относительное позиционирование */
+z-index: 2; 
+   } 
+ .aframebox {
+position: relative;
 height: 500px;
 width: 500px;
+z-index: 1;
 }
+
 </style>
 </head>
-  <body style=' overflow: hidden;'>
+  <body style='margin : 0px; overflow: hidden;'>
+<div class="knopka">
 <button  disabled="true">Please wait, loading...</button>
+	<div>
 <script>
-   alert('goo8');
+   alert('goo9');
 
 var WIDTH = 640;
 var HEIGHT = 360;
