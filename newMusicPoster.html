@@ -594,8 +594,13 @@ w.onload = function () {
  <a-entity camera></a-entity>
 </a-scene>
      </div>
-         <div id="target"></div>
-     <input type="file" id="song"/>
-
+ <script src="shared.js"></script>
+      
+<script>
+var sample = new VisualizerSample();
+document.querySelector('button').addEventListener('click', function() {
+  sample.togglePlayback()
+});
+</script>
    </body>
 </html>
