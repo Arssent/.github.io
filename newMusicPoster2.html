@@ -1,11 +1,57 @@
 <html>
    <head>
-  
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
   
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <link rel="stylesheet" href="style2.css">
+	   <style type="text/css">
+      #splash {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        cursor: pointer;
+        z-index: 999;
+      }
+    </style>
+ <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        var scene = document.querySelector("a-scene");
+        var vid = document.getElementById("video");
+        var videoShere = document.getElementById("videoShere");
+        if (scene.hasLoaded) {
+          run();
+        } else {
+          scene.addEventListener("loaded", run);
+        }
+        
+        function run () {
+          if(AFRAME.utils.device.isMobile()) {
+            document.querySelector('#splash').style.display = 'flex';
+            document.querySelector('#splash').addEventListener('click', function () {
+              playVideo();
+              this.style.display = 'none';
+            })
+          } else {
+              playVideo();
+          }
+        }
+        
+        function playVideo () {
+          vid.play();
+          videoShere.components.material.material.map.image.play();
+        }
+      })
+    </script>
 
 </head>
   <body style='margin : 0px; overflow: hidden;'>
@@ -14,13 +60,15 @@
 
 <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
-
+  <div id="splash">
+      <div id="start-button">Start</div>
+</div>
 <div class="btns-wrap">
 
 	<button disabled="true">Please wait, loading...</button>
 </div>
 <script>
-   alert('goo17');
+  // alert('goo17');
 var WIDTH = 640;
 var HEIGHT = 360;
 // Interesting parameters to tweak!
@@ -294,6 +342,7 @@ VisualizerSample.prototype.getFrequencyValue = function(freq) {
 <div class="poster" >
 <a-scene class="aframebox" embedded arjs='sourceType: webcam; displayHeight:500px;' >
   <a-assets>
+	  <video id="video" src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/" webkit-playsinline></video>
  <a-asset-item id="MainModel" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%20motel2.obj"></a-asset-item>
   <a-asset-item id="tesst1" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%20motel2.obj"></a-asset-item>
    <a-asset-item id="tesst2" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B0%2020%2000%20fin.obj"></a-asset-item>
@@ -333,7 +382,7 @@ VisualizerSample.prototype.getFrequencyValue = function(freq) {
   
              <a-entity id="test8" scale="0.121 0.1 0.1" obj-model="obj: #tesst8; " position="-0.40 0.7 -0.42" material="color:black"></a-entity>-->
  
- <a-image id="test"   position="0 0.3 0" width="1" height="1.5" rotation='-90 0 0' material="color:white"></a-image>
+ <video id="video"   position="0 0.3 0" width="1" height="1.5" rotation='-90 0 0' src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/" webkit-playsinline></video>
     </a-marker>
   
 <!--  <a-entity  id="posteR" src="#poster" position="0 0.5 0"  geometry="primitive: plane; height: 1.5; width: 1" rotation='-90 0 0'  material="color:black;  side: double;" ></a-entity>-->
