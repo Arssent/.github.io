@@ -58,12 +58,12 @@
     </div>
     <a-scene>
       <a-assets>
-          <video id="video" src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/" webkit-playsinline></video>
+          <video id="video" autoplay  src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/" webkit-playsinline></video>
       </a-assets>
       
       
-      <a-marker preset="hiro" id="aframe-scene">
- <a-video id="videoShere" src="#video" width="16" height="9" position="0 0 -5"></a-video>
+      <a-marker preset='hiro'>
+ <a-video id="videoShere" src="#video" position="0 0.3 0" width="1" height="1.5" rotation='-90 0 0' ></a-video>
    </a-marker>
    <a-entity camera></a-entity>
     </a-scene>
