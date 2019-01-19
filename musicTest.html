@@ -153,12 +153,15 @@ if (AudioContext) {
              // lik1X=lik1Y * pulse;
              //lik1Z=lik1Z * pulse;
                 lik1Y=lik1Y * pulse;
-               if(Y<=0.5){
+               if(Y<=0.3){
                Y=0.1;
                    };
               ///alert(Y);
-               if(Y>0.7){
+               if(Y>0.5){
                Y=Y*2;
+                   };
+             if(Y>0.7){
+               Y=Y*3;
                    };
                this.BoXx.setAttribute('scale', {x: X, y: Y, z: Z});
                this.Likvid.setAttribute('scale', {x: lik1X, y: lik1Y, z: lik1Z});
