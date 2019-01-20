@@ -25,6 +25,14 @@
       }
     </style>
     <script>
+      function GoVideo () {
+        var vid1 = document.getElementById("video");
+        var videoShere2 = document.getElementById("videoShere");
+          vid1.play();
+          videoShere2.components.material.material.map.image.play();
+        }
+      GoVideo ();
+      
       document.addEventListener("DOMContentLoaded", function(event) {
         var scene = document.querySelector("a-scene");
         var vid = document.getElementById("video");
