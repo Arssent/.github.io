@@ -58,14 +58,14 @@
     <div id="splash">
       <div id="start-button">Start</div>
     </div>
-   <a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' >
+  <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' > <!--<a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' >-->
       <a-assets>
           <video id="video" autoplay loop="true" src="https://arssent.github.io/%D1%88%D0%B8%D0%BB%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D1%802.mp4" webkit-playsinline></video>
       </a-assets>
       
       
-      <a-marker type='barcode' value='1'>
- <a-video id="videoShere" src="#video" position="0 0.3 0" width="1" height="1.5" rotation='-90 0 0' ></a-video>
+       <a-marker preset='hiro'><!--<a-marker type='barcode' value='1'>-->
+ <a-video id="videoShere" src="#video" position="0 0.3 7.2" width="5" height="7.2" rotation='-90 0 0' ></a-video>
    </a-marker>
    <a-entity camera></a-entity>
     </a-scene>
