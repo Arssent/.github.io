@@ -2,10 +2,16 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+ <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
+		  <a-assets>
+                  <audio id="mus" src="https://arssent.github.io/A%20Thousand%20Thousandths.mp3" preload="auto"></audio>
+                  </a-assets>
       <a-marker preset='hiro' >
 		  <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+	          <a-entity sound="src: #mus"></a-entity>
       </a-marker>
       
 		<a-camera-static/>
@@ -14,15 +20,16 @@
 
   <script>
 	  var on=false;
+
 var timerId = setInterval(function() {
-
-
+var Music = document.querySelector('[sound]');
 if(document.querySelector("a-marker").object3D.visible == true){
 if(on==false){
 console.log("found");
+Music.components.sound.playSound();
 on=true;
 }
-}else{if(on==true){on=false; console.log("lost")}};
+}else{if(on==true){on=false; console.log("lost")Music.components.sound.stopSound();}};
 }, 500);
 		  
 //var m = document.querySelector("a-marker")
