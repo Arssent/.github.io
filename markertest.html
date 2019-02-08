@@ -28,7 +28,7 @@ var Music = document.querySelector('[sound]');
 if(document.querySelector("a-marker").object3D.visible == true){
 if(on==false){
 //console.log("found");
-document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'repeat'});
+document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
 Music.components.sound.playSound();
 on=true;
 }
