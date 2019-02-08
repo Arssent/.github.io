@@ -35,6 +35,7 @@ on=true;
 }else{if(on==true){
 	on=false; 
 	//console.log("lost"); 
+	document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
 	Music.components.sound.stopSound();}};
 }, 500);
 		  
