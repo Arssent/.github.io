@@ -35,7 +35,7 @@ on=true;
 }else{if(on==true){
 	on=false; 
 	//console.log("lost"); 
-	document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
+	document.querySelector('#Poster').removeAttribute('animation-mixer');
 	Music.components.sound.stopSound();}};
 }, 500);
 		  
