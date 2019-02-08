@@ -24,11 +24,12 @@
   var timerId = setInterval(function() {
   var MarKer = document.querySelector('#mark');
 	  
-         var StatE = MarKer.is('markerFound');
+MarKer.addEventListener('stateadded', function (evt) {
+  if (evt.detail.state === 'markerFound') {
+    console.log('Entity now selected!');
+  }
+});
 	  
-          if (StatE==true){
-          alert('маркер найден');
-          };
 }, 500);
 </script>
 </body>
