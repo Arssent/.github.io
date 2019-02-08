@@ -8,12 +8,12 @@
 	<a-scene embedded arjs='sourceType: webcam;'>
 		  <a-assets>
 	          <a-asset-item id="modelPoster" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/AudioVisualisation2.gltf"></a-asset-item>
-                  <audio id="mus" src="https://arssent.github.io/AudioTest.mp3" preload="auto"></audio>
+                 <!-- <audio id="mus" src="https://arssent.github.io/AudioTest.mp3" preload="auto"></audio>-->
                   </a-assets>
       <a-marker preset='hiro' >
 	          <a-entity id="Poster" gltf-model="#modelPoster" position='0 0.5 0' scale="0.1 0.1 0.1"></a-entity>
-		 
-	          <a-entity sound="src: #mus; autoplay: true"></a-entity>
+		  <a-sound src="src: url(https://arssent.github.io/AudioTest.mp3)" autoplay="true" position="0 2 5"></a-sound>
+	          <!--<a-entity sound="src: #mus; autoplay: true"></a-entity>-->
       </a-marker>
       
 		<a-camera-static/>
