@@ -12,12 +12,16 @@
 	</a-scene>
 
 
-  <script>var timerId = setInterval(function() {
+  <script>
+var timerId = setInterval(function() {
+var on=false;
 
 if(document.querySelector("a-marker").object3D.visible == true){
+if(on==false){
 console.log("found");
-}else{console.log("lost")};
-
+on=true;
+}
+}else{if(on==true){on=false; console.log("lost")}};
 }, 500);
 		  
 //var m = document.querySelector("a-marker")
