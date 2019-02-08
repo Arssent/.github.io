@@ -23,9 +23,10 @@
   <script>
   var timerId = setInterval(function() {
   var MarKer = document.querySelector('#mark');
-	  alert('тест');
+	  
          var StatE = MarKer.is('markerFound');
-          if (StatE){
+	  
+          if (StatE==false){
           alert('маркер найден');
           };
 }, 500);
