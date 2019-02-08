@@ -13,13 +13,17 @@
 
 
   <script>
-var m = document.querySelector("a-marker")
-m.addEventListener("markerFound", (e)=>{
-   console.log("found")
-})
+	  if(document.querySelector("a-marker").object3D.visible == true){
+		 console.log("found");
+	  }else{console.log("lost")};
+		  
+//var m = document.querySelector("a-marker")
+//m.addEventListener("markerFound", (e)=>{
+   //console.log("found")
+//})
 
-m.addEventListener("markerLost", (e)=>{
+//m.addEventListener("markerLost", (e)=>{
    console.log("lost")
-})
+//})
 </script>
 </body>
