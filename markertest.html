@@ -11,8 +11,8 @@
                   <audio id="mus" src="https://arssent.github.io/A%20Thousand%20Thousandths.mp3" preload="auto"></audio>
                   </a-assets>
       <a-marker preset='hiro' >
-	          <a-entity gltf-model="#modelPoster" position='0 0.5 0' scale="0.1 0.1 0.1"></a-entity>
-		  <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+	          <a-entity id="Poster" gltf-model="#modelPoster" position='0 0.5 0' scale="0.1 0.1 0.1"></a-entity>
+		 
 	          <a-entity sound="src: #mus"></a-entity>
       </a-marker>
       
@@ -28,6 +28,7 @@ var Music = document.querySelector('[sound]');
 if(document.querySelector("a-marker").object3D.visible == true){
 if(on==false){
 //console.log("found");
+document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
 Music.components.sound.playSound();
 on=true;
 }
