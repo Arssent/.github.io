@@ -24,8 +24,8 @@
   var timerId = setInterval(function() {
   var MarKer = document.querySelector('#mark');
 	  
-MarKer.addEventListener('stateadded', function (evt) {
-  if (evt.detail.state === 'markerFound') {
+MarKer.addEventListener('markerFound', function (evt) {
+  if (evt.detail.state === 'true') {
     console.log('Entity now selected!');
   }
 });
