@@ -6,12 +6,13 @@
  <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
-		  <a-assets>
-	          <a-asset-item id="modelPoster" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Artem.gltf"></a-asset-item>
-                 <!-- <audio id="mus" src="https://arssent.github.io/AudioTest.mp3" preload="auto"></audio>-->
-                  </a-assets>
+	<a-assets>
+     <a-asset-item id="tree-obj" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%90%D0%BD%D1%8F.obj"></a-asset-item>
+    <a-asset-item id="tree-mtl" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%90%D0%BD%D1%8F.mtl"></a-asset-item>
+  </a-assets>
       <a-marker preset='hiro' >
-	          <a-entity id="Poster" gltf-model="#modelPoster" position='0 0.5 0' scale="0.1 0.1 0.1"></a-entity>
+	         
+ <a-entity id="Poster" obj-model="obj: #tree-obj; mtl: #tree-mtl" position='0 0.5 0' scale="0.1 0.1 0.1"></a-entity> 
 
       </a-marker>
       
