@@ -7,12 +7,12 @@
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
 	<a-assets>
-<a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/%D0%90%D1%80%D1%82%D0%B5%D0%BC7.obj"></a-asset-item>
-<a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/%D0%90%D1%80%D1%82%D0%B5%D0%BC7.mtl"></a-asset-item>
+<a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Artem7.obj"></a-asset-item>
+<a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Artem7.mtl"></a-asset-item>
   </a-assets>
       <a-marker preset='hiro' >
 	<a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
-		
+		<a-text value="Hello, World!"></a-text>
        <a-entity id="london" rotation="0 -90 0" side="double" position="0.0 0.2 0" scale="0.4 0.4 0.4" obj-model="obj: #london-obj; mtl: #london-mtl">
 	  <a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
 	  </a-animation>
@@ -22,7 +22,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work7');
+	alert('work8');
 	</script>
 
 </body>
