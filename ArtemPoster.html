@@ -7,19 +7,22 @@
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
 	<a-assets>
-     <a-asset-item id="tree-obj" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2FModelMain.obj"></a-asset-item>
-    <a-asset-item id="tree-mtl" src="https://cdn.glitch.com/6f99ad31-73ac-4760-87fc-7a7af6f64830%2F%D0%90%D0%BD%D1%8F.mtl"></a-asset-item>
+<a-asset-item id="london-obj" src="https://raw.githubusercontent.com/PavelLaptev/test-rep/master/AR-Framer-meetup/3d-models/london/framer-model-renew.obj"></a-asset-item>
+<a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/PavelLaptev/test-rep/master/AR-Framer-meetup/3d-models/london/framer-model-renew.mtl"></a-asset-item>
   </a-assets>
       <a-marker preset='hiro' >
-	         
- <a-entity id="Poster" obj-model="obj: #tree-obj;"  material="color:red"></a-entity> 
-
+	<a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
+		
+       <a-entity id="london" rotation="0 -90 0" side="double" position="0.0 0.2 0" scale="0.4 0.4 0.4" obj-model="obj: #london-obj; mtl: #london-mtl">
+	  <a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
+	  </a-animation>
+	</a-entity>
       </a-marker>
       
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work5');
+	alert('work6');
 	</script>
 
 </body>
