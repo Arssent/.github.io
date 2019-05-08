@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+ <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+	<a-scene embedded arjs='sourceType: webcam;'>
+		  <a-assets>
+	          <a-asset-item id="modelPoster" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/PosterAudio3.gltf"></a-asset-item>
+                 <!-- <audio id="mus" src="https://arssent.github.io/AudioTest.mp3" preload="auto"></audio>-->
+                  </a-assets>
+      <a-marker preset='hiro' >
+	          <a-entity id="Poster" gltf-model="#modelPoster" position='0 0.5 0' scale="0.1 0.1 0.1"></a-entity>
+      </a-marker>
+      
+		<a-camera-static/>
+	</a-scene>
+
+
+  <script>
+	  var on=false;
+var timerId = setInterval(function() {
+if(document.querySelector("a-marker").object3D.visible == true){
+if(on==false){
+//console.log("found");
+document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
+on=true;
+}
+}else{if(on==true){
+	on=false; 
+	//console.log("lost"); 
+	document.querySelector('#Poster').removeAttribute('animation-mixer');
+	
+}, 500);
+		  
+
+</script>
+</body>
