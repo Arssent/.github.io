@@ -26,7 +26,7 @@ var timerId = setInterval(function() {
 if(document.querySelector("a-marker").object3D.visible == true){
 if(on==false){
 //console.log("found");
-document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
+document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'repeat'});
 on=true;
 }
 }else{if(on==true){
@@ -36,6 +36,6 @@ on=true;
      };
 }, 500);
 		  
-alert('go4');
+alert('go5');
 </script>
 </body>
