@@ -12,9 +12,7 @@
                  <!-- <audio id="mus" src="https://arssent.github.io/AudioTest.mp3" preload="auto"></audio>-->
                   </a-assets>
       <a-marker preset='hiro' >
-	          <a-entity id="Poster" gltf-model="#modelPoster" rotation="-200 0 0" scale="0.5 0.5 0.5"></a-entity>
-		  <a-sound src="src: url(https://arssent.github.io/AudioTest.mp3)" autoplay="true" position="0 2 5"></a-sound>
-	          <!--<a-entity sound="src: #mus; autoplay: true"></a-entity>-->
+	          <a-entity id="Poster" gltf-model="#modelPoster" rotation="-190 0 0" scale="0.5 0.5 0.5"></a-entity>
       </a-marker>
       
 		<a-camera-static/>
@@ -22,22 +20,22 @@
 
 
   <script>
-alert('go2');
+alert('go3');
 	  var on=false;
 var timerId = setInterval(function() {
-var Music = document.querySelector('[sound]');
+//var Music = document.querySelector('[sound]');
 if(document.querySelector("a-marker").object3D.visible == true){
 if(on==false){
 //console.log("found");
 document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
-Music.components.sound.playSound();
+//Music.components.sound.playSound();
 on=true;
 }
 }else{if(on==true){
 	on=false; 
 	//console.log("lost"); 
 	document.querySelector('#Poster').removeAttribute('animation-mixer');
-	Music.components.sound.stopSound();}};
+	//Music.components.sound.stopSound();}};
 }, 500);
 		  
 
