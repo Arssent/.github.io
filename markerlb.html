@@ -19,19 +19,19 @@
 
 
   <script>
-	  var on=false;
+var on=false;
+alert('work');
 var timerId = setInterval(function() {
 if(document.querySelector("a-marker").object3D.visible == true){
 if(on==false){
-//console.log("found");
 document.querySelector('#Poster').setAttribute('animation-mixer', {clip: '*', loop: 'once'});
 on=true;
 }
 }else{if(on==true){
 	on=false; 
-	//console.log("lost"); 
 	document.querySelector('#Poster').removeAttribute('animation-mixer');
-	
+	}
+     };
 }, 500);
 		  
 
