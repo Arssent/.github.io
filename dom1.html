@@ -26,7 +26,7 @@
       }
     </style>
     <script>
-      alert('work4');
+      alert('work5');
       document.addEventListener("DOMContentLoaded", function(event) {
         var scene = document.querySelector("a-scene");
         var vid = document.getElementById("video");
@@ -58,7 +58,7 @@
   </head>
   <body>
     <div id="splash">
-      <div id="start-button">Коснитесь экрана чтобы начать воспроизведение</div>
+      <div id="start-button">Play</div>
     </div>
     <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;' ><!--<a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' >-->
       <a-assets>
@@ -67,7 +67,7 @@
       
       
      <a-marker type='barcode' value='1'>
- <a-video id="videoShere" src="#video" position="-2 0.0 -3" width="5" height="7.2" rotation='-90 0 0' ></a-video>
+ <a-video id="videoShere" src="#video" position="-2 0.0 -3" width="7" height="9.2" rotation='-90 0 0' ></a-video>
    </a-marker>
    <a-entity camera></a-entity>
     </a-scene>
