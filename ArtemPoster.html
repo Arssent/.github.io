@@ -10,11 +10,11 @@
 <a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Artem14.obj"></a-asset-item>
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Artem14.mtl"></a-asset-item>
   </a-assets>
-      <a-marker preset='hiro' >
+      <a-marker type='barcode' value='1'>
 	<a-entity light="type: hemisphere; color: #fefddd; groundColor: #fefddd; intensity: 1.2"></a-entity>
 		
 	     
-       <a-entity id="my"  side="double" rotation="-200 0 0" scale="0.5 0.5 0.5" obj-model="obj: #my-obj; mtl: #my-mtl">
+       <a-entity id="my"  side="double" rotation="-190 0 0"  position="3 0.0 -5" scale="0.5 0.5 0.5" obj-model="obj: #my-obj; mtl: #my-mtl">
 	  <a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
 	  </a-animation>
 	</a-entity>
@@ -23,7 +23,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work31');
+	alert('work32');
 	</script>
 
 </body>
