@@ -6,13 +6,13 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
  <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam;'>
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
 		  <a-assets>
 	          <a-asset-item id="modelPoster" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Kate_web_fin.gltf"></a-asset-item>
                  <!-- <audio id="mus" src="https://arssent.github.io/AudioTest.mp3" preload="auto"></audio>-->
                   </a-assets>
-      <a-marker preset='hiro' >
-	          <a-entity id="Poster" gltf-model="#modelPoster" rotation="-190 0 0" scale="0.5 0.5 0.5"></a-entity>
+      <a-marker type='barcode' value='1'>
+	          <a-entity id="Poster" gltf-model="#modelPoster" rotation="-190 0 0" position="4 -2 -7.5" scale="3 3 3"></a-entity>
       </a-marker>
       
 		<a-camera-static/>
@@ -36,6 +36,6 @@ on=true;
      };
 }, 500);
 		  
-alert('go5');
+alert('go6');
 </script>
 </body>
