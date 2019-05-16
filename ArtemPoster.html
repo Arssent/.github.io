@@ -17,14 +17,20 @@
 		
 	     
 <a-entity id="my"  side="double" rotation="-190 0 0"  position="4 -5 -9" scale="4 4 4" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>
-<a-entity id="Poster" side="double" gltf-model="#cylinder1" rotation="-100 0 0" position="3 -5 -10" scale="1.3 1.3 1.3"></a-entity>
-<a-entity id="Poster2" side="double" gltf-model="#cylinder2" rotation="-100 0 0" position="7 -5 -10" scale="1.3 1.3 1.3"></a-entity>
+	      
+<a-entity id="Poster" side="double" gltf-model="#cylinder1" rotation="-100 0 0" position="3 -5 -10" scale="1.3 1.3 1.3">
+<a-animation attribute="rotation"  dur="1000" from="100 0 0" to="-100 0 0" repeat="indefinite" easing="linear">
+</a-entity>
+	
+<a-entity id="Poster2" side="double" gltf-model="#cylinder2" rotation="-100 0 0" position="7 -5 -10" scale="1.3 1.3 1.3">
+<a-animation attribute="rotation"  dur="1000" from="-100 0 0" to="100 0 0" repeat="indefinite" easing="linear">
+</a-entity>
 		</a-marker>
       
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work78');
+	alert('work79');
 	</script>
 
 </body>
