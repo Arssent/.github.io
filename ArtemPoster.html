@@ -10,19 +10,21 @@
 <a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Asia_web2.obj"></a-asset-item>
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Asia_web2.mtl"></a-asset-item>
 <a-asset-item id="cylinder1" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/cilinder1.1.gltf"></a-asset-item>
-  </a-assets>
+<a-asset-item id="cylinder2" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/cilinder2.gltf"></a-asset-item>
+	</a-assets>
       <a-marker type='barcode' value='1'>
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 2"></a-entity>
 		
 	     
-<a-entity id="my"  side="double" rotation="-190 0 0"  position="3 -5 -7" scale="4 4 4" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>
-<a-entity id="Poster" side="double" gltf-model="#cylinder1" rotation="-100 0 0" position="3 -5 -7" scale="1.3 1.3 1.3"></a-entity>
+<a-entity id="my"  side="double" rotation="-190 0 0"  position="4 -5 -9" scale="4 4 4" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>
+<a-entity id="Poster" side="double" gltf-model="#cylinder1" rotation="-100 0 0" position="4 -5 -9" scale="1.3 1.3 1.3"></a-entity>
+<a-entity id="Poster2" side="double" gltf-model="#cylinder2" rotation="-100 0 0" position="3 -5 -9" scale="1.3 1.3 1.3"></a-entity>
 		</a-marker>
       
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work72');
+	alert('work73');
 	</script>
 
 </body>
