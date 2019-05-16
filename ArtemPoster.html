@@ -15,16 +15,14 @@
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 2"></a-entity>
 		
 	     
-       <a-entity id="my"  side="double" rotation="-190 0 0"  position="3 0 0" scale="3 3 3" obj-model="obj: #my-obj; mtl: #my-mtl">
-	  <a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
-	  </a-animation>
-	</a-entity>
-      </a-marker>
+<a-entity id="my"  side="double" rotation="-190 0 0"  position="3 -5 -7" scale="3 3 3" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>
+<a-entity id="Poster" side="double" gltf-model="#cylinder1" rotation="0 190 0" position="3 -5 -7" scale="3 3 3"></a-entity>
+		</a-marker>
       
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work64');
+	alert('work65');
 	</script>
 
 </body>
