@@ -5,14 +5,14 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
  <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
+	<a-scene embedded arjs='trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
 	<a-assets>
 <a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Asia_web2.obj"></a-asset-item>
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Asia_web2.mtl"></a-asset-item>
 <a-asset-item id="cylinder1" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/cilinder1.1.gltf"></a-asset-item>
 <a-asset-item id="cylinder2" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/cilinder2.gltf"></a-asset-item>
 	</a-assets>
-      <a-marker type='barcode' value='1'>
+      <a-marker type='barcode' value='2'>
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 2"></a-entity>
 		
 	     
@@ -30,7 +30,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work86');
+	alert('work87');
 	</script>
 
 </body>
