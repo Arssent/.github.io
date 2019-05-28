@@ -7,11 +7,11 @@
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false'>
 	<a-assets>
-<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/PavelLaptev/test-rep/master/AR-Framer-meetup/3d-models/london/framer-model-renew.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/PavelLaptev/test-rep/master/AR-Framer-meetup/3d-models/london/framer-model-renew.mtl"></a-asset-item>
+<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/final5.obj"></a-asset-item>
+<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/final5.mtl"></a-asset-item>
 	</a-assets>
       <<a-marker type='barcode' value='1'>
-	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1"></a-entity>
+	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>
 		
 	     
 <a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="1.3 1.3 1.3" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>
@@ -21,7 +21,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	//alert('work5');
+	alert('work6');
 	</script>
 
 </body>
