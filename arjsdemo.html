@@ -8,21 +8,22 @@
 	<a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 	<a-assets>
 <!--<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/PavelLaptev/test-rep/master/AR-Framer-meetup/3d-models/london/framer-model-renew.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/PavelLaptev/test-rep/master/AR-Framer-meetup/3d-models/london/framer-model-renew.mtl"></a-asset-item>-->
+<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/PavelLaptev/test-rep/master/AR-Framer-meetup/3d-models/london/framer-model-renew.mtl"></a-asset-item>
 <a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/exportPN.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/exportPN.mtl"></a-asset-item>
+<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/exportPN.mtl"></a-asset-item>-->
 	</a-assets>
       <a-marker preset='hiro'>
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1"></a-entity>
 <a-text value="Hello, World!"></a-text>    
-<a-entity id="my"  side="double" rotation="0 90 0"  position="0 0 0" scale="0.01 0.01 0.01"  obj-model="obj: #my-obj; mtl: #my-mtl"><a-animation attribute="position" from="0 0 0" dur="2000" to="1000 0 1000"></a-animation></a-entity>
+<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.01 0.01 0.01"  obj-model="obj-model=”obj: url(https://raw.githubusercontent.com/Arssent/arssent.github.io/master/exportPN.obj); 
+mtl: url(https://raw.githubusercontent.com/Arssent/arssent.github.io/master/exportPN.mtl)"></a-entity>
 	      
 		</a-marker>
       
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work17');
+	alert('work18');
 	</script>
 
 </body>
