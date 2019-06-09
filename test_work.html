@@ -17,6 +17,8 @@
 <a-asset-item id="my-mtll" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIN2web%20fin.mtl"></a-asset-item>-->
 <a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIX.obj"></a-asset-item>
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIX.mtl"></a-asset-item>
+<a-asset-item id="duck-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXduck.obj"></a-asset-item>
+<a-asset-item id="duck-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXduck.mtl"></a-asset-item>
 
 	</a-assets>
 		
@@ -37,6 +39,12 @@
 	</a-entity>
      </a-entity>
 
+         <a-entity id="container2" position="0 1 4">
+	<a-entity id="duck"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #duck-obj; mtl: #duck-mtl">
+	  <a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+	</a-entity>
+     </a-entity>
+	
 	       <a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 -360 0" repeat="indefinite" easing="linear"></a-animation>
 </a-entity>
 
@@ -46,7 +54,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work43');
+	alert('work44');
 	</script>
 
 </body>
