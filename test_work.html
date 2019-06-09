@@ -25,6 +25,8 @@
 <a-asset-item id="toy3-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy3.mtl"></a-asset-item>
 <a-asset-item id="toy6-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy6.obj"></a-asset-item>
 <a-asset-item id="toy6-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy6.mtl"></a-asset-item>
+<a-asset-item id="toy2-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy6.obj"></a-asset-item>
+<a-asset-item id="toy2-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy6.mtl"></a-asset-item>
 
 	</a-assets>
 		
@@ -69,6 +71,13 @@
 	</a-entity>
      </a-entity>
 	
+      <a-entity id="container6" position="-3 1 2">
+	<a-entity id="toy6"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #toy2-obj; mtl: #toy2-mtl">
+	  <a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+	</a-entity>
+     </a-entity>
+	
+	
 	       <!--<a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 -360 0" repeat="indefinite" easing="linear"></a-animation>-->
 </a-entity>
 
@@ -78,7 +87,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work50');
+	alert('work51');
 	</script>
 
 </body>
