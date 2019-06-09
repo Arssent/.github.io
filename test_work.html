@@ -23,6 +23,8 @@
 <a-asset-item id="toy1-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy1.mtl"></a-asset-item>
 <a-asset-item id="toy3-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy3.obj"></a-asset-item>
 <a-asset-item id="toy3-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy3.mtl"></a-asset-item>
+<a-asset-item id="toy6-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy6.obj"></a-asset-item>
+<a-asset-item id="toy6-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXtoy6.mtl"></a-asset-item>
 
 	</a-assets>
 		
@@ -50,13 +52,19 @@
      </a-entity>
 	
       <a-entity id="container3" position="-3 1 -2">
-	<a-entity id="toy1"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #toy1-obj; mtl: #toy1-mtl">
+	<a-entity id="toy3"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #toy1-obj; mtl: #toy1-mtl">
 	  <a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
 	</a-entity>
      </a-entity>
 	
       <a-entity id="container4" position="3 1 -2">
-	<a-entity id="toy1"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #toy3-obj; mtl: #toy3-mtl">
+	<a-entity id="toy4"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #toy3-obj; mtl: #toy3-mtl">
+	  <a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+	</a-entity>
+     </a-entity>
+	
+      <a-entity id="container5" position="3 1 2">
+	<a-entity id="toy5"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #toy6-obj; mtl: #toy6-mtl">
 	  <a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
 	</a-entity>
      </a-entity>
@@ -70,7 +78,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work49');
+	alert('work50');
 	</script>
 
 </body>
