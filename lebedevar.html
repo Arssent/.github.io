@@ -11,21 +11,21 @@
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/final9.mtl"></a-asset-item>-->
 <a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ2.obj"></a-asset-item>
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ2.mtl"></a-asset-item>
-<a-asset-item id="poliklinnika" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ2.gltf"></a-asset-item>
+<a-asset-item id="poliklinnika" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ4.gltf"></a-asset-item>
 	</a-assets>
       <<a-marker type='barcode' value='1'>
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>
 		
 	     
 <!--<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.01 0.01 0.01" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>-->
-<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.0002 0.0002 0.0002" gltf-model="#poliklinnika" ></a-entity>
+<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.0003 0.0003 0.0003" gltf-model="#poliklinnika" ></a-entity>
 	     
 		</a-marker>
       
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work23');
+	alert('work24');
 var model=document.getElementById('my').addEventListener('loaded', function() { alert('ok') });
 
 	
