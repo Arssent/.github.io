@@ -15,7 +15,7 @@
 	</a-assets>
       <<a-marker type='barcode' value='1'>
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>
-	<a-entity light="type: directional; color: white; groundColor: white; intensity: 1; castShadow: true;" position="0 3 0" target="#my"></a-entity>
+	<a-entity light="type: directional; color: white; groundColor: white; intensity: 1; castShadow: true; shadowCameraVisible: true;" position="0 3 0" target="#my"></a-entity>
 		
 	     
 <!--<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.01 0.01 0.01" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>-->
@@ -26,7 +26,7 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	alert('work27');
+	alert('work28');
 var model=document.getElementById('my').addEventListener('loaded', function() { alert('ok') });
 
 	
