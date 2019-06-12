@@ -5,7 +5,7 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false' shadow="basic" >
+	<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false'>
 	<a-assets>
 <!--<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/final9.obj"></a-asset-item>
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/final9.mtl"></a-asset-item>
@@ -15,16 +15,16 @@
 	</a-assets>
       <a-marker type='barcode' value='1'>
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>
-	<a-entity light="type: point; color: white; groundColor: white; intensity: 1; castShadow: true; distance: 50; decay: 2;" position="0 3 0" ></a-entity>  
+	<!--<a-entity light="type: point; color: white; groundColor: white; intensity: 1; castShadow: true; distance: 50; decay: 2;" position="0 3 0" ></a-entity>-->  
 <!--<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.01 0.01 0.01" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>-->
-<a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika" shadow="receive: true"></a-entity>
+<a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika"></a-entity>
 	     
      </a-marker>
       
      <a-camera-static/>
 	</a-scene>
 <script>
-	alert('work46');
+	alert('work47');
 var model=document.getElementById('my').addEventListener('loaded', function() { console.log("модель загружена"); });
 
 	
