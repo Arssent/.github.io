@@ -15,7 +15,7 @@
 	</a-assets>
       <a-marker type='barcode' value='1'>
 	<!--<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>-->
-	<a-entity light="type: point; color: white; intensity: 1; castShadow: true; distance: 10; decay: 2;" position="0 2 0" ></a-entity>  
+	<a-entity light="type: point; color: white; intensity: 3; castShadow: true; distance: 10; decay: 2;" position="0 2 0" ></a-entity>  
 <!--<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.01 0.01 0.01" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>-->
 <a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika"></a-entity>
 	     
@@ -24,7 +24,7 @@
      <a-camera-static/>
 	</a-scene>
 <script>
-	alert('work49');
+	alert('work50');
 var model=document.getElementById('my').addEventListener('loaded', function() { console.log("модель загружена"); });
 
 	
