@@ -15,7 +15,7 @@
 <a-asset-item id="fix" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/test/fixmodel5.gltf"></a-asset-item>
 	</a-assets>
       <a-marker type='barcode' value='1'>
-	<!--<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>-->
+	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>
 	<a-entity light="type: point; color: white; intensity: 22; castShadow: true; distance: 3; decay: 1;" position="-1.8 2.5 0" ></a-entity>  
 <!--<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.01 0.01 0.01" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>-->
 <a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika"></a-entity>
@@ -26,7 +26,7 @@
      <a-camera-static/>
 	</a-scene>
 <script>
-	alert('work92');
+	alert('work93');
 var model=document.getElementById('my').addEventListener('model-loaded', function() { alert("модель загружена"); });
 
 	
