@@ -34,7 +34,7 @@ body{
 	
 .AR-tip {
         z-index: 9999;
-        padding: 30px 50px 60px;
+        padding: 20px 30px 40px;
 	min-width: 50px;
 	max-width: 400px;
 	display: block;
@@ -54,13 +54,13 @@ body{
 .AR-tip p {
         font-weight: 100;
         color: #fff;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	line-height: 1em;
 
 }
 		
 .gotit {
-  font-size: 0.7em;
+  font-size: 0.9em;
   color: #ff0;
   text-decoration: none;
   display: block;
