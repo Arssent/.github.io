@@ -63,6 +63,8 @@ body{
   font-size: 1.4em;
   color: #ff0;
   text-decoration: none;
+  display: block;
+  text-align: center;
 }
 
 
