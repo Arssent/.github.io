@@ -16,11 +16,18 @@ function getAndroidVersion(ua) {
 function getMobileOperatingSystem() {
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (/android/i.test(userAgent)) {
-        return parseInt(getAndroidVersion(), 10);
+         var check2= parseInt(getAndroidVersion(), 10);
+	    if(check2<6){
+		    return "bad";
+	       };
+       return "ок";
     }
     return "unknown";
 }
 var check=getMobileOperatingSystem(); alert(check);
+if(check=='bad'){
+   alert('Устройство не поддерживается');
+   };
 </script>
 <body style='margin : 0px; overflow: hidden;'>
 <div class="AR-tip">
@@ -54,7 +61,7 @@ var check=getMobileOperatingSystem(); alert(check);
      <a-camera-static/>
 	</a-scene>
 <script>
-	alert('work9');
+	alert('work10');
 function start() {
   document.getElementById('container').style.display = 'none';
 }
