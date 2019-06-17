@@ -24,9 +24,9 @@ function getMobileOperatingSystem() {
     }
     return "unknown";
 }
-var check=getMobileOperatingSystem(); alert(check);
+var check=getMobileOperatingSystem(); //alert(check);
 if(check=='bad'){
-   alert('Устройство не поддерживается');
+   window.location.href = "http://arssent.github.io/test/error.html";
    };
 </script>
 <body style='margin : 0px; overflow: hidden;'>
@@ -61,12 +61,10 @@ if(check=='bad'){
      <a-camera-static/>
 	</a-scene>
 <script>
-	alert('work10');
+	alert('work11');
 function start() {
   document.getElementById('container').style.display = 'none';
 }
-
-
 document.getElementsByClassName('gotit')[0].addEventListener( "click" , function() {document.getElementsByClassName('AR-tip')[0].style.display = 'none'});
 var model=document.getElementById('my').addEventListener('model-loaded', function() { setTimeout(start, 7000); });
 	
