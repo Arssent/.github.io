@@ -38,9 +38,14 @@
      <a-camera-static/>
 	</a-scene>
 <script>
-	alert('work4');
+	alert('work5');
+function start() {
+  document.getElementById('container').style.display = 'none';
+}
+
+
 document.getElementsByClassName('gotit')[0].addEventListener( "click" , function() {document.getElementsByClassName('AR-tip')[0].style.display = 'none'});
-var model=document.getElementById('my').addEventListener('model-loaded', function() { document.getElementById('container').style.display = 'none'; });
+var model=document.getElementById('my').addEventListener('model-loaded', function() { setTimeout(start, 6000); });
 	
 </script>
 
