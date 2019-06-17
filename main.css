@@ -35,7 +35,7 @@ body{
 .AR-tip {
         z-index: 9999;
         padding: 15px 10px 20px;
-	min-width: 80px;
+	min-width: 70px;
 	max-width: 400px;
 	display: block;
         background: rgba(0,0,0,0.7);
@@ -52,7 +52,7 @@ body{
 }
 
 .AR-tip p {
-        font-weight: 200;
+        font-weight: 100;
         color: #fff;
 	font-size: 1em;
 	line-height: 1em;
