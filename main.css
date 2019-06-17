@@ -1,9 +1,9 @@
 
 @font-face {
     font-family: 'als_schlange_sans';
-    src: url('../fonts/als_schlange_sans-thin.woff2') format('woff2'),
-         url('../fonts/als_schlange_sans-thin.woff') format('woff');
-    font-weight: 100;
+    src: url('../fonts/als_schlange_sans-regular.woff2') format('woff2'),
+         url('../fonts/als_schlange_sans-regular.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
