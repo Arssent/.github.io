@@ -1,9 +1,45 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui">
+<meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+<title>Мои поликлиники AR</title>
+<link rel="stylesheet" type="text/css" href="https://arssent.github.io/main.css"/>
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
- <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
+<script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
+<script>
+function getAndroidVersion(ua) {
+    ua = (ua || navigator.userAgent).toLowerCase(); 
+    var match = ua.match(/android\s([0-9\.]*)/);
+    return match ? match[1] : undefined;
+};
+	
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/android/i.test(userAgent)) {
+         var check2= parseInt(getAndroidVersion(), 10);
+	    if(check2<6){
+		    return "bad";
+	       };
+       return "ок";
+    }
+    return "unknown";
+}
+var check=getMobileOperatingSystem(); //alert(check);
+if(check=='bad'){
+   window.location.href = "http://arssent.github.io/test/error.html";
+   };
+</script>
+<body style='margin : 0px; overflow: hidden;'>
+<div class="AR-tip">
+	<p>Для быстрой и стабильной работы лучше использовать «Гугл Хром» или  «Сафари» и закрыть другие вкладки.</p>
+  <p>Дополненная реальность отображается, когда камера видит черно-белую 
+метку.</p>
+	<a class="gotit" href="#">Понятно</a>
+</div>
+<div id="container">
+<img class="center-pic" src="http://aa-p.ru/Images/loading_gray.gif" width="30%" height="40%"/>
+</div>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
 	<a-assets>
@@ -87,7 +123,11 @@
 		<a-camera-static/>
 	</a-scene>
 <script>
-	//alert('work55');
+	function start() {
+  document.getElementById('container').style.display = 'none';
+}
+document.getElementsByClassName('gotit')[0].addEventListener( "click" , function() {document.getElementsByClassName('AR-tip')[0].style.display = 'none'});
+var model=document.getElementById('my').addEventListener('model-loaded', function() { setTimeout(start, 7000); });
 	</script>
 
 </body>
