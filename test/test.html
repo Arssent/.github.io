@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui">
+<meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+<title>Мои поликлиники AR</title>
+<link rel="stylesheet" type="text/css" href="https://arssent.github.io/main.css"/>
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
+<script src="https://arssent.github.io/js/main.js"></script>
+
 <body style='margin : 0px; overflow: hidden;'>
+<div class="AR-tip">
+	<p>Для быстрой и стабильной работы лучше использовать «Гугл Хром» или  «Сафари» и закрыть другие вкладки.</p>
+  <p>Дополненная реальность отображается, когда камера видит черно-белую 
+метку.</p>
+	<a class="gotit" href="#">Понятно</a>
+</div>
+<div id="container">
+<img class="center-pic" src="http://aa-p.ru/Images/loading_gray.gif" width="30%" height="40%"/>
+</div>
 	<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false' shadow>
 	<a-assets>
-<!--<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/final9.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/final9.mtl"></a-asset-item>
-<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ2.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ2.mtl"></a-asset-item>
-<a-asset-item id="poliklinnika" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/test/OBJ6.gltf"></a-asset-item>-->
 <a-asset-item id="poliklinnika" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ8.gltf"></a-asset-item>
 <a-asset-item id="fix" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/test/fixmodel5.gltf"></a-asset-item>
 	</a-assets>
       <a-marker type='barcode' value='1'>
-	<!--<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>-->
 	<a-entity light="type: point; color: white; intensity: 7; castShadow: true; distance: 4; decay: 1;" position="-1.8 2.5 0" ></a-entity>  
-<!--<a-entity id="my"  side="double" rotation="0 0 0"  position="0 0.2 0" scale="0.01 0.01 0.01" obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>-->
 <a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika"></a-entity>
 <a-entity id="fixed"  side="double" rotation="0 0 0"  position="-0.9 0 -0.2" scale="4.7 4.7 4.7" gltf-model="#fix"></a-entity>
 	     
@@ -27,9 +34,11 @@
      <a-camera-static/>
 	</a-scene>
 <script>
-	alert('work95');
-var model=document.getElementById('my').addEventListener('model-loaded', function() { alert("модель загружена"); });
-
+	//alert('work11');
+function start() {
+  document.getElementById('container').style.display = 'none';
+}
+var model=document.getElementById('my').addEventListener('model-loaded', function() { setTimeout(start, 7000); });
 	
 </script>
 
