@@ -12,27 +12,26 @@
 <body style='margin : 0px; overflow: hidden;'>
 <div class="AR-tip">
 	<p>Для быстрой и стабильной работы лучше использовать «Гугл Хром» или  «Сафари» и закрыть другие вкладки.</p>
-  <p>Дополненная реальность отображается, когда камера видит черно-белую 
-метку.</p>
+        <p>Дополненная реальность отображается, когда камера видит черно-белую метку.</p>
 	<a class="gotit" href="#">Понятно</a>
 </div>
+	
 <div id="container">
 <img class="center-pic" src="http://aa-p.ru/Images/loading_gray.gif" width="30%" height="40%"/>
 </div>
-	<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false' shadow>
+  <a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false' shadow>
 	<a-assets>
-<a-asset-item id="poliklinnika" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ8.gltf"></a-asset-item>
-<a-asset-item id="fix" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/test/fixmodel5.gltf"></a-asset-item>
+           <a-asset-item id="poliklinnika" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ8.gltf"></a-asset-item>
+           <a-asset-item id="fix" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/test/fixmodel5.gltf"></a-asset-item>
 	</a-assets>
       <a-marker type='barcode' value='1'>
-	<a-entity light="type: point; color: white; intensity: 7; castShadow: true; distance: 4; decay: 1;" position="-1.8 2.5 0" ></a-entity>  
-<a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika"></a-entity>
-<a-entity id="fixed"  side="double" rotation="0 0 0"  position="-0.9 0 -0.2" scale="4.7 4.7 4.7" gltf-model="#fix"></a-entity>
-	     
-     </a-marker>
+        <a-entity light="type: point; color: white; intensity: 7; castShadow: true; distance: 4; decay: 1;" position="-1.8 2.5 0" ></a-entity>  
+        <a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika"></a-entity>
+        <a-entity id="fixed"  side="double" rotation="0 0 0"  position="-0.9 0 -0.2" scale="4.7 4.7 4.7" gltf-model="#fix"></a-entity>
+      </a-marker>
       
      <a-camera-static/>
-	</a-scene>
+  </a-scene>
 <script>
 	//alert('work11');
 function start() {
