@@ -22,12 +22,10 @@
   <a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false' shadow>
 	<a-assets>
            <a-asset-item id="poliklinnika" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/OBJ8.gltf"></a-asset-item>
-           <a-asset-item id="fix" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/test/fixmodel5.gltf"></a-asset-item>
 	</a-assets>
       <a-marker type='barcode' value='1'>
         <a-entity light="type: point; color: white; intensity: 7; castShadow: true; distance: 4; decay: 1;" position="-1.8 2.5 0" ></a-entity>  
         <a-entity id="my"  side="double" rotation="0 0 0"  position="-1.8 0 -1" scale="0.0004 0.0004 0.0004" gltf-model="#poliklinnika"></a-entity>
-        <a-entity id="fixed"  side="double" rotation="0 0 0"  position="-0.9 0 -0.2" scale="4.7 4.7 4.7" gltf-model="#fix"></a-entity>
       </a-marker>
       
      <a-camera-static/>
@@ -37,7 +35,7 @@
 function start() {
   document.getElementById('container').style.display = 'none';
 }
-var model=document.getElementById('my').addEventListener('model-loaded', function() { setTimeout(start, 7000); });
+var model=document.getElementById('poliklinnika').addEventListener('model-loaded', function() { setTimeout(start, 7000); });
 document.getElementsByClassName('gotit')[0].addEventListener( "click" , function() {document.getElementsByClassName('AR-tip')[0].style.display = 'none'});
 	
 </script>
