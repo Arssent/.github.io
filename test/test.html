@@ -39,6 +39,7 @@ function start() {
   document.getElementById('container').style.display = 'none';
 }
 var model=document.getElementById('my').addEventListener('model-loaded', function() { setTimeout(start, 7000); });
+document.getElementsByClassName('gotit')[0].addEventListener( "click" , function() {document.getElementsByClassName('AR-tip')[0].style.display = 'none'});
 	
 </script>
 
