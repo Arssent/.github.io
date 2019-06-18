@@ -20,4 +20,4 @@ if(check=='bad'){
    window.location.href = "http://arssent.github.io/test/error.html";
    };
    
-   document.getElementsByClassName('gotit')[0].addEventListener( "click" , function() {document.getElementsByClassName('AR-tip')[0].style.display = 'none'});
+   
