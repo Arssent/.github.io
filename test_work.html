@@ -7,50 +7,21 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
-<script>
-function getAndroidVersion(ua) {
-    ua = (ua || navigator.userAgent).toLowerCase(); 
-    var match = ua.match(/android\s([0-9\.]*)/);
-    return match ? match[1] : undefined;
-};
-	
-function getMobileOperatingSystem() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (/android/i.test(userAgent)) {
-         var check2= parseInt(getAndroidVersion(), 10);
-	    if(check2<6){
-		    return "bad";
-	       };
-       return "ок";
-    }
-    return "unknown";
-}
-var check=getMobileOperatingSystem(); //alert(check);
-if(check=='bad'){
-   window.location.href = "http://arssent.github.io/test/error.html";
-   };
-</script>
+<script src="https://arssent.github.io/js/main.js"></script>
+
 <body style='margin : 0px; overflow: hidden;'>
 <div class="AR-tip">
 	<p>Для быстрой и стабильной работы лучше использовать «Гугл Хром» или  «Сафари» и закрыть другие вкладки.</p>
-  <p>Дополненная реальность отображается, когда камера видит черно-белую 
-метку.</p>
+        <p>Дополненная реальность отображается, когда камера видит черно-белую метку.</p>
 	<a class="gotit" href="#">Понятно</a>
 </div>
+	
 <div id="container">
 <img class="center-pic" src="http://aa-p.ru/Images/loading_gray.gif" width="30%" height="40%"/>
 </div>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
 	<a-assets>
-<!--<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafika1%20web%20fin.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafika1%20web%20fin.mtl"></a-asset-item>-->
-<!--<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFINweb%20fin2.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFINweb%20fin2.mtl"></a-asset-item>
-<a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIN1web%20fin.obj"></a-asset-item>
-<a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIN1web%20fin.mtl"></a-asset-item>
-<a-asset-item id="my-obji" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIN2web%20fin.obj"></a-asset-item>
-<a-asset-item id="my-mtll" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIN2web%20fin.mtl"></a-asset-item>-->
 <a-asset-item id="my-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIX.obj"></a-asset-item>
 <a-asset-item id="my-mtl" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIX.mtl"></a-asset-item>
 <a-asset-item id="duck-obj" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/grafikaFIXduck.obj"></a-asset-item>
@@ -68,13 +39,6 @@ if(check=='bad'){
 		
 <a-marker type='barcode' value='2'>
 	<a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 1.5"></a-entity>
-  
-<!--<a-entity id="box"><a-entity id="my"  side="double" rotation="0 0 0"  position="0 1 0" scale="2 2 2"  obj-model="obj: #my-obj; mtl: #my-mtl">
-<a-animation attribute="position" dur="3000" from="0 1 0" to="0 3 0"  repeat="indefinite" direction="alternate"></a-animation></a-entity>
-<a-entity id="myy"  side="double" rotation="0 0 0"  position="0 0.8 0" scale="2 2 2"  obj-model="obj: #my-obji; mtl: #my-mtll">
-<a-animation attribute="position" dur="3000" from="0 0.8 0" to="0 0 0"  repeat="indefinite" direction="alternate"></a-entity>
-	<a-animation attribute="rotation"  dur="22000" from="0 0 0"  to="0 360 0" repeat="indefinite" easing="linear">
-	</a-entity>-->
 
 <a-entity id="box">
      <a-entity id="container" position="0 1 -4">
