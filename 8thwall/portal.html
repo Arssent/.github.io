@@ -6,6 +6,8 @@
 
     <!-- We've included a slightly modified version of A-Frame, which fixes some polish concerns -->
     <script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
+    <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
+    <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
 
     <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
          See github.com/8thwall/web/xrextras -->
@@ -74,9 +76,10 @@
       <!-- We can define assets here to be loaded when A-Frame initializes -->
       <a-assets>
         <!-- Credit to Poly by Google for the model: https://poly.google.com/view/0fVRHo65E-j -->
-        <a-asset-item id="unicornModel" src="unicorn.glb"></a-asset-item>
+        <!--<a-asset-item id="unicornModel" src="unicorn.glb"></a-asset-item>-->
         <!--<a-asset-item id="portalModel" src="arportal3.glb"></a-asset-item>-->
         <a-asset-item id="portalModel" src="arportal.glb"></a-asset-item>
+        <a-asset-item id="kate" src="Kate_web_fin.glb"></a-asset-item>
       </a-assets>
 
       <a-camera
@@ -146,12 +149,18 @@
              <a-entity
         light="type: directional;
                intensity: 0.8;"
-        position="1 4.3 2.5">
+        position="1 2.3 1">
 </a-entity>
         <a-entity
           scale="1 1 1"
           position="0 0 -7"
           gltf-model="#portalModel"></a-entity>
+               <a-entity
+          scale="1 1 1"
+          position="0 0 -1"
+          rotation="-190 0 0"
+          animation-mixer="clip: *; loop: repeat"
+          gltf-model="#kate"></a-entity>
         <a-sky color="white"></a-sky>
         <a-box
           scale="200 1 100"
