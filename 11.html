@@ -5,7 +5,7 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
  <script src="https://github.com/rexraptor08/animation-controls/tree/master/js/aframe-extras.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
+	<a-scene embedded arjs='sourceType: webcam; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;'>
 		  <a-assets>
 	          <a-asset-item id="modelPoster" src="https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Nika.gltf"></a-asset-item><!--https://raw.githubusercontent.com/Arssent/arssent.github.io/master/Kate_web_fin.gltf -->
                  <!-- <audio id="mus" src="https://arssent.github.io/AudioTest.mp3" preload="auto"></audio>-->
@@ -14,7 +14,6 @@
 	      <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 3"></a-entity>
 	          <a-entity id="Poster" gltf-model="#modelPoster" rotation="90 10 190" position="4 0 -7.5" scale="3 3 3"></a-entity>
       </a-marker>
-      
 		<a-camera-static/>
 	</a-scene>
 
@@ -35,6 +34,6 @@ on=true;
      };
 }, 500);
 		  
-//alert('go29');
+//оо
 </script>
 </body>
