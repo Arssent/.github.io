@@ -8,6 +8,12 @@ html, body{
 	height: 100%;
 }
 
+
+p{
+	padding: 0;
+	margin: 0;
+}
+
 body{
 
     font-family: 'PT Sans', sans-serif;
@@ -22,6 +28,7 @@ body{
 	transform: translate(-50%, -50%);
 	padding: 58px 77px 38px 77px;
 	width: 967px;
+	height: 645px;
 	top:50%; 
 	left:50%;
 	border-radius: 6px;
@@ -71,12 +78,12 @@ body{
 	font-family: 'Noto Serif', serif;
 	font-weight: 700;
 	font-size: 18px;
-	margin-bottom: 6px;
+	margin-bottom: 7px;
 
 }
 
 .title-wraper-content{
-	margin-bottom: 24px;
+	margin-bottom: 23px;
 	font-family: 'Noto Serif', serif;
 	line-height: 1.2;
 	font-weight: 800;
@@ -86,7 +93,7 @@ body{
 
 .book-text {
 	font-family: 'PT Sans', sans-serif;
-	margin-bottom: 2px;
+	margin-bottom: 8px;
 	font-weight: 400;
 	color:#6c757f;
 	font-size: 15px;
@@ -94,18 +101,27 @@ body{
 	word-break: keep-all;
 }
 
+
+
+
+
+.book-text p{
+	margin-bottom: 14px;
+}
+
 .cost-title-wrapper-content{
 
-    margin-bottom: -4px;
+    
 	font-family: 'Noto Serif', serif;
 	font-weight: 700;
 	font-size: 18px;
 }
 
+
+
 .cost-wrapper-content{
 
-	margin-bottom: 20px;
-	margin-left: -2px;
+	margin-bottom: 22px;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 700;
 	font-size: 28px;
@@ -113,11 +129,14 @@ body{
 
 }
 
+
+
+
 .button-cart-wrapper-content{
-	width: 176px;
-	vertical-align: top;
-	padding: 2px 5px;
-	line-height: 2.1;
+
+	width: 175px;
+	/*padding: 10px 5px 13px; */
+	padding: 9px 5px 14px 4px;
 	text-align: center;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 700;
