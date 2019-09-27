@@ -1,0 +1,130 @@
+
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	margin:0;
+	height: 100%;
+}
+
+body{
+
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Noto Serif', serif;
+    background-color: #e3f2fd;
+    position: relative;
+
+}
+
+.wrapper-content{
+	position:absolute;
+	transform: translate(-50%, -50%);
+	padding: 58px 77px 38px 77px;
+	width: 967px;
+	top:50%; 
+	left:50%;
+	border-radius: 6px;
+	background-color: white;
+	box-shadow: 0px 0px 55px 0px rgba(181, 220, 248, 1);
+
+}
+
+.wraper-content:after, .wraper-content:before {
+	content: '';
+	display: block;
+	clear: both;
+
+}
+
+.img-wraper{ 
+
+	margin-left: -7px;
+	margin-top: 3px;
+	width: 371px;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	float: left;
+
+}
+
+
+.card-img{
+
+}
+
+.info-wrapper-content{
+	float: right;
+	width: 426px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-right: -7px;
+	font-family: 'Noto Serif', serif;
+	font-weight: 200;
+	font-size: 22px;
+	color: #bfc5c8;
+}
+
+.pre-title{
+	margin-top: 2px;
+	font-family: 'Noto Serif', serif;
+	font-weight: 700;
+	font-size: 18px;
+	margin-bottom: 6px;
+
+}
+
+.title-wraper-content{
+	margin-bottom: 24px;
+	font-family: 'Noto Serif', serif;
+	line-height: 1.2;
+	font-weight: 800;
+	font-size: 38px;
+	color: #01a4bd;
+}
+
+.book-text {
+	font-family: 'PT Sans', sans-serif;
+	margin-bottom: 2px;
+	font-weight: 400;
+	color:#6c757f;
+	font-size: 15px;
+	line-height: 1.2;
+	word-break: keep-all;
+}
+
+.cost-title-wrapper-content{
+
+    margin-bottom: -4px;
+	font-family: 'Noto Serif', serif;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.cost-wrapper-content{
+
+	margin-bottom: 20px;
+	margin-left: -2px;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 28px;
+	color: #000000;
+
+}
+
+.button-cart-wrapper-content{
+	width: 176px;
+	vertical-align: top;
+	padding: 2px 5px;
+	line-height: 2.1;
+	text-align: center;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	background-color: #e2013b;
+	border-radius: 5px;
+	color: #ffffff;
+
+
+}
