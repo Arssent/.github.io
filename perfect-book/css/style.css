@@ -1,4 +1,5 @@
 
+
 *{
 	box-sizing: border-box;
 }
@@ -26,7 +27,7 @@ body{
 .wrapper-content{
 	position:absolute;
 	transform: translate(-50%, -50%);
-	padding: 58px 77px 38px 77px;
+	padding: 57px 70px 38px 70px;
 	width: 967px;
 	height: 645px;
 	top:50%; 
@@ -46,7 +47,7 @@ body{
 
 .img-wraper{ 
 
-	margin-left: -7px;
+	
 	margin-top: 3px;
 	width: 371px;
 	height: 100%;
@@ -66,7 +67,7 @@ body{
 	width: 426px;
 	margin-top: 10px;
 	margin-bottom: 20px;
-	margin-right: -7px;
+
 	font-family: 'Noto Serif', serif;
 	font-weight: 200;
 	font-size: 22px;
@@ -83,8 +84,9 @@ body{
 }
 
 .title-wraper-content{
-	margin-bottom: 23px;
+	margin-bottom: 22px;
 	font-family: 'Noto Serif', serif;
+	letter-spacing: 0.1px;
 	line-height: 1.2;
 	font-weight: 800;
 	font-size: 38px;
@@ -93,7 +95,7 @@ body{
 
 .book-text {
 	font-family: 'PT Sans', sans-serif;
-	margin-bottom: 8px;
+	margin-bottom: 15px;
 	font-weight: 400;
 	color:#6c757f;
 	font-size: 15px;
@@ -134,8 +136,7 @@ body{
 
 .button-cart-wrapper-content{
 
-	width: 175px;
-	/*padding: 10px 5px 13px; */
+	width: 174px;
 	padding: 9px 5px 14px 4px;
 	text-align: center;
 	font-family: 'PT Sans', sans-serif;
