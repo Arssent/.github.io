@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Titles -->
+	<title>Document</title>
+	<meta name="keywords" content="">
+    <meta name="description" content="">
+
+	<!-- Syles -->
+	<link rel="stylesheet" href="css/ars-framework.css">
+	<link rel="stylesheet" href="css/main.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<!-- FavIcons -->
+	<link rel="icon" href="img/favicon.png"  type="image/x-icon" />
+	<link rel="shortcut icon" href="img/favicon.png"  type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+</head>
+<body>
+
+	<!--[if lt IE 8]>
+	    <p class="browserupgrade">Вы используете <strong>устаревшую</strong> версию браузера. Пожалуйста <a href="http://browsehappy.com/">обновите свой браузер</a>.</p>
+	<![endif]-->
+
+	<!-- Здесь пишем код -->
+	
+    <div class="container swction">
+    	<div class="row">
+    		<div class="col-sm-12">
+    			<h1>Собственный мини-фреймворк</h1>
+    			<p>Фреймворк - это "констркутор", каркас для
+    			проекта. Набор элементов, стилей (классов), блоков,
+    		    - которые можно использовать чтобы построить свою
+    		    страницу. Фреймворк можно изменять, переопределяя 
+    		    кго стили</p>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="container section">
+    	<div class="row">
+    		<div class="col-sm-12">
+    			<h1 class="text-center" >Сетка</h1>
+    		</div>
+
+    		<div class="col-sm-12">
+    			<div class="visible">.col-sm-12</div>
+    		</div>
+
+    	</div>
+
+    	<div class="row">
+
+    		<div class="col-sm-6">
+    			<div class="visible">.col-sm-6</div>
+    		</div>
+
+    		<div class="col-sm-6">
+    			<div class="visible">.col-sm-6</div>
+    		</div>
+
+       	</div>
+
+
+        <div class="row">
+    		<div class="col-sm-4">
+    			<div class="visible">.col-sm-4</div>
+    		</div>
+
+
+    		<div class="col-sm-4">
+    			<div class="visible">.col-sm-4</div>
+    		</div>
+
+    		<div class="col-sm-4">
+    			<div class="visible">.col-sm-4</div>
+    		</div>
+    	</div>
+
+    	        <div class="row">
+    		<div class="col-sm-3">
+    			<div class="visible">.col-sm-3</div>
+    		</div>
+
+    		<div class="col-sm-3">
+    			<div class="visible">.col-sm-3</div>
+    		</div>
+
+    		<div class="col-sm-3">
+    			<div class="visible">.col-sm-3</div>
+    		</div>
+
+    		<div class="col-sm-3">
+    			<div class="visible">.col-sm-3</div>
+    		</div>
+    	</div>
+
+    </div>
+
+
+
+	<div class="conatainer">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="text-center" >Адаптивная сетка</h1>
+			</div>
+		</div>
+	</div>
+	
+	<div class="conatainer section">
+		<!-- Демонстрация работы сетки -->
+		<div class="row">
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="visible">.col-sm-12 / .col-md-6 / .col-lg-3</div>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="visible">.col-sm-12 / .col-md-6 / .col-lg-3</div>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="visible">.col-sm-12 / .col-md-6 / .col-lg-3</div>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="visible">.col-sm-12 / .col-md-6 / .col-lg-3</div>
+			</div>
+		</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12"></div>
+			<div class="content-form">
+				<h2 class="text-center" >Формы</h2>
+				<form>
+					<div class="form-group">
+						<label class="label" for="">Текстовое поле</label>
+						<input class="input" type="text">
+					</div>
+					<div class="form-group">
+						<label class="label" for="">Текстовая область</label>
+						<textarea class="textarea"  cols="30" rows="10"></textarea>
+						
+					</div>
+					<div class="form-group">
+						<input class="button" type="submit">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="container section">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2 class="text-center" >Кнопки</h2>
+				<input class="button button--submit" type="submit" value="Кнопка 1">
+				<div class="button button--danger">Кнопка 2</div>
+				<a class="button button--link" href="#">Кнопка 3</a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<div class="container section">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2 class="text-center" >Карточки</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 col-md-6">
+			<div class="card">
+				<h3 >Заголовок карточки</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus atque quas fugiat doloribus earum excepturi unde facere sit. Cumque pariatur doloremque eligendi, neque eos dolores atque aperiam fugit, accusamus officiis</p>
+				<a href="" class="button">Кнопка</a>
+			</div>
+		</div>
+
+	
+		<div class="col-sm-12 col-md-6">
+			<div class="card text-right">
+				<h3 >Заголовок карточки</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus atque quas fugiat doloribus earum excepturi unde facere sit. Cumque pariatur doloremque eligendi, neque eos dolores atque aperiam fugit, accusamus officiis.</p>
+				<a href="" class="button">Кнопка</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	</div>
+   <h2 class="text-center">Вспомогательные классы</h2>
+	<div class="container section">
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h5>text-left</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore recusandae commodi ut modi error, incidunt eligendi. Ad eum nostrum quisquam eligendi consequatur. Eveniet corporis, voluptas dolor earum eaque quasi atque?</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-right">
+				<h5>text-right</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique necessitatibus recusandae repellendus provident ad iure, eum voluptatibus maxime pariatur excepturi, minima autem dicta culpa distinctio eaque consectetur placeat. Qui, reprehenderit?</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h5>text-center</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error optio provident quae deleniti quaerat, accusantium distinctio dignissimos inventore! Quia vero soluta laudantium alias perferendis facilis. Assumenda repellat facilis, repellendus explicabo!</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-justify">
+				<h5>text-justify</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores soluta id eum tempore odit cupiditate quod fugiat distinctio! Qui accusamus optio voluptates eligendi neque praesentium temporibus, earum exercitationem commodi.</p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="libs/jquery/jquery-1.11.2.min.js"><\/script>')</script>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
